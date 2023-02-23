@@ -6,7 +6,7 @@
 /*   By: laugarci <laugarci@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 15:00:52 by laugarci          #+#    #+#             */
-/*   Updated: 2023/02/23 16:49:00 by laugarci         ###   ########.fr       */
+/*   Updated: 2023/02/23 16:58:24 by laugarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,17 +49,14 @@ void	ft_check_arg(t_stack *stack_a, char **str, int count)
 
 	i = 1;
 	j = 0;
+	stack_a->A = malloc(sizeof(int *) * count + 1);
 	while (str[i])
 	{
 		aux = ft_atoi(str[i]);
-		printf("%i\n", aux);
-		//crear malloc largada stack_a + largada numero nuevo
 		stack_a->A[j] = aux;
 		i++;
 		j++;
 	}
-	printf("%i\n", stack_a->A[1]);
-
 }
 
 int main(int ac, char **av)
