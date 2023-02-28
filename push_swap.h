@@ -6,7 +6,7 @@
 /*   By: laugarci <laugarci@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 14:48:32 by laugarci          #+#    #+#             */
-/*   Updated: 2023/02/24 14:00:58 by laugarci         ###   ########.fr       */
+/*   Updated: 2023/02/24 14:18:44 by laugarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include <unistd.h>
 #include <stdlib.h>
 
-#include "./libft/libft.h"
+#include "./lib/libft.h"
 
 typedef struct s_stack
 {
