@@ -6,7 +6,7 @@
 /*   By: laugarci <laugarci@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 15:00:52 by laugarci          #+#    #+#             */
-/*   Updated: 2023/04/15 18:33:06 by laugarci         ###   ########.fr       */
+/*   Updated: 2023/04/15 18:58:37 by laugarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,10 @@ void	ft_copy_stack(t_list **stack_a, char **av)
 		ft_lstadd_back(stack_a, new);
 		i++;
 	}
-//	index_stack(stack);
+//	index
 }
 
-int ft_count_nums(char **str)
+int	ft_count_nums(char **str)
 {
 	int i;
 	int j;

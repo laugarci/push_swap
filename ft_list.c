@@ -6,7 +6,7 @@
 /*   By: laugarci <laugarci@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/15 18:34:51 by laugarci          #+#    #+#             */
-/*   Updated: 2023/04/15 18:36:04 by laugarci         ###   ########.fr       */
+/*   Updated: 2023/04/15 18:38:57 by laugarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ t_list	*ft_lstnew(int val)
 {
 	t_list	*new;
 
-	new = (t_list *) malloc(sizeof(*new));
+	new = (t_list *)malloc(sizeof(*new));
 	if (!new)
 		return (NULL);
 	new->val = val;
