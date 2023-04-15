@@ -1,41 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_lstlast_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: laugarci <laugarci@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/29 13:03:39 by laugarci          #+#    #+#             */
-/*   Updated: 2023/04/15 15:59:49 by laugarci         ###   ########.fr       */
+/*   Created: 2022/10/16 17:57:11 by laugarci          #+#    #+#             */
+/*   Updated: 2023/04/15 18:20:28 by laugarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "push_swap.h"
 
-int	ft_atoi(const char *str)
+t_list	*ft_lstlast(t_list *lst)
 {
-	int	i;
-	int	j;
-	int	flag;
-
-	i = 0;
-	j = 0;
-	flag = 1;
-	while (str[i] == ' ' || (str[i] >= 9 && str[i] <= 13))
-	{
-		i++;
-	}
-	if (str[i] == '-' || str[i] == '+')
-	{
-		if (str[i] == '-')
-			flag = flag * -1;
-		i++;
-	}
-	while (str[i] >= '0' && str[i] <= '9')
-	{
-		j = j * 10;
-		j = j + str[i] - 48;
-		i++;
-	}
-	return (j * flag);
+	if (!lst)
+		return (0);
+	while (lst->next)
+		lst = lst->next;
+	return (lst);
 }

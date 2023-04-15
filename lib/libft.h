@@ -6,7 +6,7 @@
 /*   By: laugarci <laugarci@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/19 10:14:49 by laugarci          #+#    #+#             */
-/*   Updated: 2022/10/17 16:34:23 by laugarci         ###   ########.fr       */
+/*   Updated: 2023/04/15 18:13:51 by laugarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ void		ft_striteri(char *s, void (*f)(unsigned int, char*));
 char		**ft_split(char const *s, char c);
 char		*ft_strtrim(char const *s1, char const *set);
 char		*ft_itoa(int n);
-typedef struct s_list
+/*typedef struct s_list
 {
 	void			*content;
 	struct s_list	*next;
@@ -66,6 +66,6 @@ void		ft_lstadd_back(t_list **lst, t_list *new);
 void		ft_lstdelone(t_list *lst, void (*del)(void *));
 void		ft_lstclear(t_list **lst, void (*del)(void *));
 void		ft_lstiter(t_list *lst, void (*f)(void *));
-t_list		*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
+t_list		*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));*/
 
 #endif

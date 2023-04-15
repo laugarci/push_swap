@@ -1,41 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_lstadd_back_bonus.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: laugarci <laugarci@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/29 13:03:39 by laugarci          #+#    #+#             */
-/*   Updated: 2023/04/15 15:59:49 by laugarci         ###   ########.fr       */
+/*   Created: 2022/10/16 18:01:23 by laugarci          #+#    #+#             */
+/*   Updated: 2023/04/15 18:10:23 by laugarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "push_swap.h"
 
-int	ft_atoi(const char *str)
+void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	int	i;
-	int	j;
-	int	flag;
+	t_list	*last;
 
-	i = 0;
-	j = 0;
-	flag = 1;
-	while (str[i] == ' ' || (str[i] >= 9 && str[i] <= 13))
+	if (!new)
+		return ;
+	if (!*lst)
+		*lst = new;
+	else
 	{
-		i++;
+		last = ft_lstlast(*lst);
+		last->next = new;
 	}
-	if (str[i] == '-' || str[i] == '+')
-	{
-		if (str[i] == '-')
-			flag = flag * -1;
-		i++;
-	}
-	while (str[i] >= '0' && str[i] <= '9')
-	{
-		j = j * 10;
-		j = j + str[i] - 48;
-		i++;
-	}
-	return (j * flag);
 }
