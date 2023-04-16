@@ -6,7 +6,7 @@
 /*   By: laugarci <laugarci@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 15:00:52 by laugarci          #+#    #+#             */
-/*   Updated: 2023/04/15 18:58:37 by laugarci         ###   ########.fr       */
+/*   Updated: 2023/04/16 12:11:40 by laugarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	ft_copy_stack(t_list **stack_a, char **av)
 		ft_lstadd_back(stack_a, new);
 		i++;
 	}
-//	index
+	stack_ind(stack_a);
 }
 
 int	ft_count_nums(char **str)
@@ -83,7 +83,11 @@ int main(int ac, char **av)
 	count = ft_count_nums(av);
 	ft_check_arg(av);
 	stack_a = (t_list **)malloc(sizeof(t_list));
+	if (!stack_a)
+		return (0);
 	stack_b = (t_list **)malloc(sizeof(t_list));
+	if (!stack_b)
+		return (0);
 	*stack_a = NULL;
 	*stack_b = NULL;
 	ft_copy_stack(stack_a, av);
