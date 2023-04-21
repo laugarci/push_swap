@@ -24,7 +24,14 @@ t_list	*ft_lstnew(int val);
 
 
 //Sorting
-void	*make_sa(t_list *stack_a);
-void	*make_sb(t_list *stack_b);
-void	*make_ss(t_list *stack_a, t_list *stack_b);
-
+void	make_sa(t_list *stack_a);
+void	make_sb(t_list *stack_b);
+void	make_ss(t_list *stack_a, t_list *stack_b);
+void	make_pa(t_list *stack_a, t_list *stack_B);
+void	make_pb(t_list *stack_b, t_list *stack_a);
+void	make_ra(t_list *stack_a);
+void	make_rb(t_list *stack_b);
+void	make_rr(t_list *stack_a, t_list *stack_b);
+void	make_rra(t_list *stack_a);
+void	make_rrb(t_list *stack_b);
+void	make_rrr(t_list *stack_a, t_list *stack_b);

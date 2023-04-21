@@ -5,9 +5,7 @@ int	ft_stack_is_sort(t_list *stack_a, int count)
 {
 	t_list *aux;
 
-	printf("prueba stack %d\n", stack_a->val);
 	aux = stack_a;
-	printf("prueba aux %d\n", aux->val);
 	while (aux != NULL && aux->next != NULL)
 	{
 		if (aux->val < aux->next->val)
@@ -63,9 +61,12 @@ int main(int ac, char **av)
 	int count;
 	t_list *stack_a;
 	t_list *stack_b;
-	
+
 	if (ac < 2)
+	{
 		write (1, "Error\n", 6);
+		return (0);
+	}
 	count = ac - 1;
 	ft_check_arg(av);
 	stack_a = (t_list *)malloc(sizeof(t_list));
@@ -77,11 +78,6 @@ int main(int ac, char **av)
 	stack_a = NULL;
 	stack_b = NULL;
 	stack_a = ft_copy_stack(stack_a, av);
-//	printf("antes:\n");
-//	printf("%d\n", stack_a->val);
-//	printf("%d\n", stack_a->next->val);
-//	printf("%d\n", stack_a->next->next->val);
-//	printf("%d\n", stack_a->next->next->next->val);
 	if (ft_stack_is_sort(stack_a, count) == 1)
 	{
 		printf("stack is sort\n");
@@ -89,10 +85,4 @@ int main(int ac, char **av)
 	}
 	else
 		make_ss(stack_a, stack_b);
-//	printf("despues:\n");
-//	printf("%d\n", stack_a->val);
-//	printf("%d\n", stack_a->next->val);
-//	printf("%d\n", stack_a->next->next->val);
-//	printf("%d\n", stack_a->next->next->next->val);
-
 }
