@@ -29,7 +29,7 @@ void	make_sb(t_list *stack_b);
 void	*make_ss(t_list *stack_a, t_list *stack_b);
 void	make_pa(t_list **stack_a, t_list **stack_b);
 void	make_pb(t_list *stack_b, t_list *stack_a);
-void	make_ra(t_list *stack_a);
+void	make_ra(t_list **stack_a);
 void	make_rb(t_list *stack_b);
 void	make_rr(t_list *stack_a, t_list *stack_b);
 void	make_rra(t_list *stack_a);

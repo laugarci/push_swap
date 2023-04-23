@@ -97,7 +97,7 @@ void	make_pb(t_list	*stack_b, t_list *stack_a)
 
 }
 
-void	make_ra(t_list *stack_a)
+void	make_ra(t_list **stack_a)
 {
 	//desplaza hacia arriba todos los elementos del stack a una posición, de forma que el primer elemento se convierte en el último.
 	    if (*stack_a != NULL && (*stack_a)->next != NULL)
@@ -107,7 +107,7 @@ void	make_ra(t_list *stack_a)
 			    current = current->next;
 		    current->next = *stack_a;        
 		    *stack_a = (*stack_a)->next;
-		    urrent->next->next = NULL;
+		    current->next->next = NULL;
 	    }
 }
 
