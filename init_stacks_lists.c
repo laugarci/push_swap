@@ -42,3 +42,5 @@ t_list	*ft_lstnew(int val)
 	new->next = NULL;
 	return (new);
 }
+
+

@@ -61,6 +61,7 @@ int main(int ac, char **av)
 	int count;
 	t_list *stack_a;
 	t_list *stack_b;
+	t_list *new;
 
 	if (ac < 2)
 	{
@@ -77,6 +78,9 @@ int main(int ac, char **av)
 		return (0);
 	stack_a = NULL;
 	stack_b = NULL;
+	ft_push(&stack_b, 3);
+	ft_push(&stack_b, 5);
+	ft_push(&stack_b, 6);
 	stack_a = ft_copy_stack(stack_a, av);
 	if (ft_stack_is_sort(stack_a, count) == 1)
 	{
@@ -84,5 +88,8 @@ int main(int ac, char **av)
 		return (0);
 	}
 	else
-		make_ss(stack_a, stack_b);
+	{
+		make_pa(&stack_a, &stack_b);
+		printf("%d\n", stack_a->next->val);
+	}
 }
