@@ -99,9 +99,7 @@ int	main(int ac, char **av)
 	else
 	{
 		if (count <= 5)
-		{
 			sort_small_stack(stack_a, stack_b, count);
-		}
 		else
 			sort_big_stack(&stack_a, &stack_b, count);
 	}
