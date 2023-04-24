@@ -32,7 +32,7 @@ void	make_pb(t_list *stack_b, t_list *stack_a);
 void	make_ra(t_list **stack_a);
 void	make_rb(t_list *stack_b);
 void	make_rr(t_list *stack_a, t_list *stack_b);
-void	make_rra(t_list *stack_a);
+void	make_rra(t_list **stack_a);
 void	make_rrb(t_list *stack_b);
 void	make_rrr(t_list *stack_a, t_list *stack_b);
 
