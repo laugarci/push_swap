@@ -10,7 +10,6 @@ void	make_sa(t_list *stack_a)
 	aux = stack_a->val;
 	stack_a->val = stack_a->next->val;
 	stack_a->next->val = aux;
-//	write(1, "sa\n", 3);
 }
 
 void	make_sb(t_list *stack_b)
@@ -21,15 +20,11 @@ void	make_sb(t_list *stack_b)
 	aux = stack_b->val;
 	stack_b->val = stack_b->next->val;
 	stack_b->next->val = aux;
-//	write(1, "sb\n", 3);
 }
 
 void	*make_ss(t_list *stack_a, t_list *stack_b)
 {
 	//sa y sb a la vez
-	t_list *aux;
-
-	aux = stack_a;
 	if (!stack_b)
 		return (NULL);
 	else
@@ -98,9 +93,26 @@ void	make_pa(t_list **stack_a, t_list **stack_b)
 	//ft_push(stack_a, ft_pop(stack_b));
 }
 
-void	make_pb(t_list	*stack_b, t_list *stack_a)
+void	make_pb(t_list	**stack_b, t_list **stack_a)
 {
 	//toma el primer elemento del stack a y lo pone encima del stack b. No hace nada si a está vacío.
+	t_list *first_node_a;
+
+	if (*stack_a != NULL)
+	{
+		first_node_a = *stack_a;
+		*stack_a = first_node_a->next;
+		if (*stack_b == NULL)
+		{
+			*stack_b = first_node_a;
+			first_node_a->next = NULL;
+		}
+		else
+		{
+			first_node_a->next = *stack_b;
+			*stack_b = first_node_a;
+		}
+	}
 
 }
 
@@ -119,41 +131,62 @@ void	make_ra(t_list **stack_a)
 	    }
 }
 
-void	make_rb(t_list *stack_b)
+void	make_rb(t_list **stack_b)
 {
 	//desplaza hacia arriba todos los elementos del stack b una posición, de forma que el primer elemento se convierte en el último.
+	t_list *current;
+	if (*stack_b != NULL && (*stack_b)->next != NULL)
+	{
+		current = *stack_b;
+		while (current->next != NULL)
+			current = current->next;
+		current->next = *stack_b;
+		*stack_b = (*stack_b)->next;
+		current->next->next = NULL;
+	}
 }
 
 void	make_rr(t_list *stack_a, t_list *stack_b)
 {
 	//desplaza al mismo tiempo todos los elementos del stack a y del stack b una posición hacia arriba, de forma que el primer elemento se convierte en el último
-	
 }
 
 void	make_rra(t_list **stack_a)
 {
 	// desplaza hacia abajo todos los elementos del stack a una posición, de forma que el último elemento se convierte en el primero.i
-	t_list *current = *stack_a;    
-       	t_list *prev = NULL;
-	// Si la lista está vacía o sólo tiene un elemento, no hacemos nada
+	t_list *current;   
+       	t_list *prev;
+
+	current = *stack_a;
+	prev = NULL;
 	if (current == NULL || current->next== NULL)
 		return;
-	// Avanzamos hasta el último nodo de la lista
 	while (current->next != NULL)
 	{
 		prev = current;
 		current = current->next;
 	}
-	// El último nodo se convierte en el primer nodo de la lista
 	current->next = *stack_a;
 	*stack_a = current;
-	// El nodo anterior al último nodo se convierte en el último
 	prev->next = NULL;
 }
 
-void	make_rrb(t_list *stack_b)
+void	make_rrb(t_list **stack_b)
 {
 	//desplaza hacia abajo todos los elementos del stack b una posición, de forma que el último elemento se convierte en el primero
+	t_list	*current;
+	t_list	*prev;
+
+	current = *stack_b;
+	prev = NULL;
+	if (current->next != NULL)
+	{
+		prev = current;
+		current = current->next;
+	}
+	current->next = *stack_b;
+	*stack_b = current;
+	prev->next = NULL;
 }
 
 void	make_rrr(t_list *stack_a, t_list *stack_b)

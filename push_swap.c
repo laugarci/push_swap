@@ -90,6 +90,5 @@ int main(int ac, char **av)
 	else
 	{
 		make_pa(&stack_a, &stack_b);
-		printf("%d\n", stack_a->val);
 	}
 }
