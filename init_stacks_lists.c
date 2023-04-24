@@ -1,9 +1,20 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   init_stacks_lists.c                                :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: laugarci <laugarci@student.42barcel>       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/04/24 16:03:53 by laugarci          #+#    #+#             */
+/*   Updated: 2023/04/24 16:05:04 by laugarci         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "push_swap.h"
 
 t_list	*ft_lstlast(t_list *lst)
 {
-	t_list *aux;
+	t_list	*aux;
 
 	aux = lst;
 	while (aux->next)
@@ -17,10 +28,10 @@ t_list	*ft_lstlast(t_list *lst)
 
 void	ft_lstadd_back(t_list **stack_a, t_list *new)
 {
-	t_list *last;
-	
+	t_list	*last;
+
 	if (!new)
-		 return ;
+		return ;
 	if (!*stack_a)
 		*stack_a = new;
 	else
@@ -30,11 +41,10 @@ void	ft_lstadd_back(t_list **stack_a, t_list *new)
 	}
 }
 
-
 t_list	*ft_lstnew(int val)
 {
 	t_list	*new;
-	
+
 	new = (t_list *)malloc(sizeof(*new));
 	if (!new)
 		return (NULL);
@@ -42,5 +52,3 @@ t_list	*ft_lstnew(int val)
 	new->next = NULL;
 	return (new);
 }
-
-

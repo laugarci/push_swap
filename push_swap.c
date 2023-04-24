@@ -1,9 +1,20 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   push_swap.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: laugarci <laugarci@student.42barcel>       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/04/24 16:05:44 by laugarci          #+#    #+#             */
+/*   Updated: 2023/04/24 16:51:17 by laugarci         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "push_swap.h"
 
 int	ft_stack_is_sort(t_list *stack_a, int count)
 {
-	t_list *aux;
+	t_list	*aux;
 
 	aux = stack_a;
 	while (aux != NULL && aux->next != NULL)
@@ -21,7 +32,7 @@ int	ft_stack_is_sort(t_list *stack_a, int count)
 t_list	*ft_copy_stack(t_list *stack_a, char **av)
 {
 	t_list	*new;
-	int	i;
+	int		i;
 
 	i = 1;
 	while (av[i])
@@ -44,7 +55,8 @@ void	ft_check_arg(char **str)
 		j = 0;
 		while (str[i][j])
 		{
-			if (str[i][j] >= '0' && str[i][j] <= '9' || str[i][j] == '-' && str[i][j + 1] >= '0' && str[i][j] <= '9')
+			if (str[i][j] >= '0' && str[i][j] <= '9' ||
+				str[i][j] == '-' && str[i][j + 1] >= '0' && str[i][j] <= '9')
 				j++;
 			else
 			{
@@ -56,12 +68,12 @@ void	ft_check_arg(char **str)
 	}
 }
 
-int main(int ac, char **av)
+int	main(int ac, char **av)
 {
-	int count;
-	t_list *stack_a;
-	t_list *stack_b;
-	t_list *new;
+	int		count;
+	t_list	*stack_a;
+	t_list	*stack_b;
+	t_list	*new;
 
 	if (ac < 2)
 	{
@@ -78,9 +90,6 @@ int main(int ac, char **av)
 		return (0);
 	stack_a = NULL;
 	stack_b = NULL;
-	ft_push(&stack_b, 3);
-	ft_push(&stack_b, 5);
-	ft_push(&stack_b, 6);
 	stack_a = ft_copy_stack(stack_a, av);
 	if (ft_stack_is_sort(stack_a, count) == 1)
 	{
@@ -90,7 +99,9 @@ int main(int ac, char **av)
 	else
 	{
 		if (count <= 5)
+		{
 			sort_small_stack(stack_a, stack_b, count);
+		}
 		else
 			sort_big_stack(&stack_a, &stack_b, count);
 	}
