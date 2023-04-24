@@ -44,7 +44,7 @@ void	ft_check_arg(char **str)
 		j = 0;
 		while (str[i][j])
 		{
-			if (str[i][j] >= '0' && str[i][j] <= '9')
+			if (str[i][j] >= '0' && str[i][j] <= '9' || str[i][j] == '-' && str[i][j + 1] >= '0' && str[i][j] <= '9')
 				j++;
 			else
 			{
@@ -89,6 +89,9 @@ int main(int ac, char **av)
 	}
 	else
 	{
-		make_pa(&stack_a, &stack_b);
+		if (count <= 5)
+			sort_small_stack(stack_a, stack_b, count);
+		else
+			sort_big_stack(&stack_a, &stack_b, count);
 	}
 }

@@ -1,15 +1,19 @@
 #include "push_swap.h"
 
 
-void	make_sa(t_list *stack_a)
+void	make_sa(t_list **stack_a)
 {
 	//intercambia los dos primeros elementos encima del stack_a. No hace nada si hay uno o menos elementos
-	int aux;
-	
-
-	aux = stack_a->val;
-	stack_a->val = stack_a->next->val;
-	stack_a->next->val = aux;
+	t_list	*first;
+	t_list	*second;
+	int	temp;
+	if (*stack_a == NULL || (*stack_a)->next == NULL)
+		    return;
+	first = *stack_a;
+	second = (*stack_a)->next;
+	temp = first->val;
+	first->val = second->val;
+	second->val = temp;
 }
 
 void	make_sb(t_list *stack_b)
@@ -29,7 +33,7 @@ void	*make_ss(t_list *stack_a, t_list *stack_b)
 		return (NULL);
 	else
 		make_sb(stack_b);
-		make_sa(stack_a);
+		make_sa(&stack_a);
 }
 
 void	ft_push(t_list **stack, int val)

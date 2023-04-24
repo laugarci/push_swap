@@ -23,8 +23,8 @@ void	ft_lstadd_back(t_list **stack_a, t_list *new);
 t_list	*ft_lstnew(int val);
 
 
-//Sorting
-void	make_sa(t_list *stack_a);
+//Sorting operations
+void	make_sa(t_list **stack_a);
 void	make_sb(t_list *stack_b);
 void	*make_ss(t_list *stack_a, t_list *stack_b);
 void	make_pa(t_list **stack_a, t_list **stack_b);
@@ -35,6 +35,9 @@ void	make_rr(t_list *stack_a, t_list *stack_b);
 void	make_rra(t_list **stack_a);
 void	make_rrb(t_list **stack_b);
 void	make_rrr(t_list *stack_a, t_list *stack_b);
-
 int	ft_pop(t_list **stack);
 void	ft_push(t_list **stack, int val);
+
+//Sort small stack
+void	sort_small_stack(t_list *stack_a, t_list *stack_b, int count);
+void	sort_big_stack(t_list **stack_a, t_list **stack_b, int count);
