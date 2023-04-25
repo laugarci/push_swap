@@ -6,7 +6,7 @@
 /*   By: laugarci <laugarci@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/24 16:30:50 by laugarci          #+#    #+#             */
-/*   Updated: 2023/04/24 17:59:04 by laugarci         ###   ########.fr       */
+/*   Updated: 2023/04/25 17:13:31 by laugarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,13 @@
 # include <stdio.h>
 # include <unistd.h>
 # include <stdlib.h>
+# include <limits.h>
 
 typedef struct s_list
 {
 	struct s_list	*next;
 	int				val;
+	int				index;
 }	t_list;
 
 //Preparar stacks
@@ -32,6 +34,8 @@ int		ft_atoi(const char *str);
 t_list	*ft_lstlast(t_list *lst);
 void	ft_lstadd_back(t_list **stack_a, t_list *new);
 t_list	*ft_lstnew(int val);
+void	ft_index(t_list *stack_a, int count);
+int		ft_stack_is_sort(t_list *stack_a, int count);
 
 //Sorting operationst
 void	make_sa(t_list **stack_a);
