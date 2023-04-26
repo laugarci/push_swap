@@ -6,11 +6,25 @@
 /*   By: laugarci <laugarci@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/24 16:05:44 by laugarci          #+#    #+#             */
-/*   Updated: 2023/04/24 16:51:17 by laugarci         ###   ########.fr       */
+/*   Updated: 2023/04/26 17:57:44 by laugarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+t_list	*ft_init_index(t_list *stack_a)
+{
+	t_list *aux;
+
+	aux = stack_a;
+	while (aux != NULL)
+	{
+		aux->index = -1;
+		aux = aux->next;
+	}
+	aux = stack_a;
+	return (aux);
+}
 
 int	ft_stack_is_sort(t_list *stack_a, int count)
 {
@@ -98,9 +112,11 @@ int	main(int ac, char **av)
 	}
 	else
 	{
+		stack_a = ft_init_index(stack_a);
 		if (count <= 5)
 			sort_small_stack(stack_a, stack_b, count);
 		else
 			stack_a = ft_index(stack_a, count);
 	}
+	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: laugarci <laugarci@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/24 16:30:50 by laugarci          #+#    #+#             */
-/*   Updated: 2023/04/25 17:13:31 by laugarci         ###   ########.fr       */
+/*   Updated: 2023/04/26 18:07:24 by laugarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,15 +30,17 @@ t_list	*ft_copy_stack(t_list *stack_a, char **av);
 t_list	*ft_lstnew(int val);
 
 //Utils
-int		ft_atoi(const char *str);
-t_list	*ft_lstlast(t_list *lst);
-void	ft_lstadd_back(t_list **stack_a, t_list *new);
-t_list	*ft_lstnew(int val);
-int	ft_stack_is_sort(t_list *stack_a, int count);
-int	find_max_num(t_list *stack_a);
-int	find_min_num(t_list *stack_a);
-t_list	*ft_index(t_list *stack_a, int count);
-int	index_is_sort(t_list *stack_a, int count);
+int			ft_atoi(const char *str);
+t_list		*ft_lstlast(t_list *lst);
+void		ft_lstadd_back(t_list **stack_a, t_list *new);
+t_list		*ft_lstnew(int val);
+int			ft_stack_is_sort(t_list *stack_a, int count);
+int			find_max_num(t_list *stack_a);
+int			find_min_num(t_list *stack_a);
+t_list		*ft_index(t_list *stack_a, int count);
+int			index_is_sort(t_list *stack_a, int count);
+t_list		*ft_init_index(t_list *stack_a);
+int			ft_find_index(t_list *stack_a);
 
 //Sorting operationst
 void	make_sa(t_list **stack_a);

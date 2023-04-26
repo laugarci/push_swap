@@ -6,7 +6,7 @@
 /*   By: laugarci <laugarci@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/25 16:54:55 by laugarci          #+#    #+#             */
-/*   Updated: 2023/04/25 17:11:06 by laugarci         ###   ########.fr       */
+/*   Updated: 2023/04/26 18:36:11 by laugarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,21 +16,21 @@ int	index_is_sort(t_list *stack_a, int count)
 {
 	t_list	*aux;
 	int i;
-	int j;
 	
+	aux = (t_list *)malloc(sizeof(t_list *));
 	aux = stack_a;
 	i = 0;
-	j = 0;
-	while (j <= count)
-	{
-		aux->index = aux->next->index;
-		i++;	
+
+	while (aux->index != -1)
+	{	
+		aux	= aux->next;
+		i++;
 	}
 	if (i == count)
 		return (0);
 	else
 		return (1);
-	return (1);
+	return (0);
 }
 
 int	find_min_num(t_list *stack_a)
@@ -44,17 +44,20 @@ int	find_min_num(t_list *stack_a)
 
 	while (current != NULL)
 	{
-		if (current->val < min_int->val)
+		if (current->index == -1)
 		{
-			min_int = current;
+			if (current->val < min_int->val)
+			{
+				min_int = current;
+			}
+	//		current = current->next;
 		}
 		current = current->next;
 	}
 	num = min_int->val;
-
 	return (num);
 }
-
+/*
 int	find_max_num(t_list *stack_a)
 {
 	t_list	*max_int;
@@ -74,6 +77,25 @@ int	find_max_num(t_list *stack_a)
 	}
 	num = max_int->val;
 	return (num);
+}*/
+
+int		ft_find_index(t_list *stack_a)
+{
+	int i;
+	t_list *aux;
+
+	aux = stack_a;
+	i = 0;
+	while (aux != NULL)
+	{
+		if (aux->index != -1)
+		{
+			if (i < aux->index)
+				i = aux->index;
+		}
+		aux = aux->next;
+	}
+	return (i);
 }
 
 t_list	*ft_index(t_list *stack_a, int count)
@@ -83,32 +105,30 @@ t_list	*ft_index(t_list *stack_a, int count)
 	int min;
 	int max;
 	int index;
-	
-	aux = (t_list *)malloc(sizeof(t_list *));
-	max = find_max_num(stack_a);
-	min = find_min_num(stack_a);
-	index = 0;
-	aux = stack_a;
 
-	//while (min <= max)
-	//{
-		while (aux->next != NULL)
+	aux = (t_list *)malloc(sizeof(t_list *));
+//	max = find_max_num(stack_a);
+	min = find_min_num(stack_a);
+	index = ft_find_index(stack_a);
+	aux = stack_a;
+	
+	if (index != 0)
+		index = index + 1;
+	while (aux != NULL)
+	{
+		if (aux->index == -1)
 		{
 			if (aux->val == min)
 			{
-				write(1, "1\n", 2);
 				aux->index = index;
 				index++;
 				min++;
 			}
 			aux = aux->next;
 		}
-		aux = stack_a;
-		printf("%d\n", aux->next->next->next->index);
-	//}
-//	if ((index_is_sort(stack_a, count)) == 1)
-//	{
-//		ft_index(stack_a, count);
-//	}
-	return (stack_a);
+	}
+	aux = stack_a;
+	if ((index_is_sort(aux, count)) == 1)
+		ft_index(aux, count);
+	return (aux);
 }
