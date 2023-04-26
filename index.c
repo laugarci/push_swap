@@ -16,16 +16,15 @@ int	index_is_sort(t_list *stack_a, int count)
 {
 	int i;
 
-	i = 0;
-	
+	i = 0;	
 	while (stack_a != NULL)
 	{
 		if (stack_a->index != -1)
 			i++;
 		stack_a = stack_a->next;
 	}
-//	printf("i es %d\n", i);
-//	printf("count es %d\n", count);
+	printf("i es %d\n", i);
+	printf("count es %d\n", count);
 	if (i != count)
 		return (1);
 	return (0);
@@ -102,14 +101,14 @@ t_list	*ft_index(t_list *stack_a, int count)
 	printf("%d\n", aux->next->next->next->index);
 	printf("%d\n", aux->next->next->next->next->index);
 	printf("%d\n", aux->next->next->next->next->next->index);
-	ft_index(aux, count);
-//	if ((index_is_sort(aux, count)) == 1)
-//	{
-//		ft_index(aux, count);
-//	}
-//	else
-//	{
-//		printf("ok\n");
-//		return (aux);
-//	}
+	if ((index_is_sort(aux, count)) == 1)
+	{
+		write(1, "hola\n", 5);
+		ft_index(aux, count);
+	}
+	else
+	{
+		printf("ok\n");
+		return (aux);
+	}
 }
