@@ -6,7 +6,7 @@
 /*   By: laugarci <laugarci@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/25 16:54:55 by laugarci          #+#    #+#             */
-/*   Updated: 2023/04/26 18:36:11 by laugarci         ###   ########.fr       */
+/*   Updated: 2023/04/26 18:44:46 by laugarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,15 +21,19 @@ int	index_is_sort(t_list *stack_a, int count)
 	aux = stack_a;
 	i = 0;
 
-	while (aux->index != -1)
-	{	
-		aux	= aux->next;
-		i++;
+	while (aux != NULL)
+	{
+		if (aux->index == -1)
+		{
+			aux	= aux->next;
+			i++;
+		}
+		aux = aux->next;
 	}
 	if (i == count)
-		return (0);
-	else
 		return (1);
+	else
+		return (0);
 	return (0);
 }
 
@@ -101,7 +105,6 @@ int		ft_find_index(t_list *stack_a)
 t_list	*ft_index(t_list *stack_a, int count)
 {
 	t_list *aux;
-	t_list *tmp;
 	int min;
 	int max;
 	int index;
@@ -128,7 +131,11 @@ t_list	*ft_index(t_list *stack_a, int count)
 		}
 	}
 	aux = stack_a;
+	printf("%d\n", aux->next->next->next->index);
 	if ((index_is_sort(aux, count)) == 1)
+	{
+//		write(1, "entra\n", 6);
 		ft_index(aux, count);
+	}
 	return (aux);
 }
