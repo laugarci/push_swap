@@ -34,8 +34,11 @@ int		ft_atoi(const char *str);
 t_list	*ft_lstlast(t_list *lst);
 void	ft_lstadd_back(t_list **stack_a, t_list *new);
 t_list	*ft_lstnew(int val);
-void	ft_index(t_list *stack_a, int count);
-int		ft_stack_is_sort(t_list *stack_a, int count);
+int	ft_stack_is_sort(t_list *stack_a, int count);
+int	find_max_num(t_list *stack_a);
+int	find_min_num(t_list *stack_a);
+t_list	*ft_index(t_list *stack_a, int count);
+int	index_is_sort(t_list *stack_a, int count);
 
 //Sorting operationst
 void	make_sa(t_list **stack_a);

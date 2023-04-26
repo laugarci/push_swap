@@ -82,7 +82,7 @@ int	main(int ac, char **av)
 	}
 	count = ac - 1;
 	ft_check_arg(av);
-	stack_a = (t_list *)malloc(sizeof(t_list));
+	stack_a = (t_list *)malloc(sizeof(t_list *));
 	if (!stack_a)
 		return (0);
 	stack_b = (t_list *)malloc(sizeof(t_list));
@@ -101,6 +101,6 @@ int	main(int ac, char **av)
 		if (count <= 5)
 			sort_small_stack(stack_a, stack_b, count);
 		else
-			sort_big_stack(&stack_a, &stack_b, count);
+			stack_a = ft_index(stack_a, count);
 	}
 }
