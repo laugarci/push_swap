@@ -14,26 +14,20 @@
 
 int	index_is_sort(t_list *stack_a, int count)
 {
-	t_list	*aux;
 	int i;
-	
-	aux = (t_list *)malloc(sizeof(t_list *));
-	aux = stack_a;
-	i = 0;
 
-	while (aux != NULL)
+	i = 0;
+	
+	while (stack_a != NULL)
 	{
-		if (aux->index == -1)
-		{
-			aux	= aux->next;
+		if (stack_a->index != -1)
 			i++;
-		}
-		aux = aux->next;
+		stack_a = stack_a->next;
 	}
-	if (i == count)
+//	printf("i es %d\n", i);
+//	printf("count es %d\n", count);
+	if (i != count)
 		return (1);
-	else
-		return (0);
 	return (0);
 }
 
@@ -42,46 +36,17 @@ int	find_min_num(t_list *stack_a)
 	t_list	*min_int;
 	t_list	*current;
 	int	num;
-
+	
 	min_int = stack_a;
 	current = stack_a;
-
 	while (current != NULL)
 	{
-		if (current->index == -1)
-		{
-			if (current->val < min_int->val)
-			{
-				min_int = current;
-			}
-	//		current = current->next;
-		}
+		if (current->index == -1 && current->val < min_int->val)
+			min_int = current;
 		current = current->next;
 	}
-	num = min_int->val;
-	return (num);
+	return (min_int->val);
 }
-/*
-int	find_max_num(t_list *stack_a)
-{
-	t_list	*max_int;
-	t_list	*current;
-	int	num;
-
-	max_int = stack_a;
-	current = stack_a;
-
-	while (current != NULL)
-	{
-		if (current->val > max_int->val)
-		{
-			max_int = current;
-		}
-		current = current->next;
-	}
-	num = max_int->val;
-	return (num);
-}*/
 
 int		ft_find_index(t_list *stack_a)
 {
@@ -109,12 +74,11 @@ t_list	*ft_index(t_list *stack_a, int count)
 	int max;
 	int index;
 
-	aux = (t_list *)malloc(sizeof(t_list *));
-//	max = find_max_num(stack_a);
 	min = find_min_num(stack_a);
 	index = ft_find_index(stack_a);
 	aux = stack_a;
-	
+	printf("min %d\n", min);
+	printf("index %d\n", index);
 	if (index != 0)
 		index = index + 1;
 	while (aux != NULL)
@@ -127,15 +91,25 @@ t_list	*ft_index(t_list *stack_a, int count)
 				index++;
 				min++;
 			}
-			aux = aux->next;
 		}
+		aux = aux->next;
 	}
 	aux = stack_a;
+	printf("indice\n");
+	printf("%d\n", aux->index);
+	printf("%d\n", aux->next->index);
+	printf("%d\n", aux->next->next->index);
 	printf("%d\n", aux->next->next->next->index);
-	if ((index_is_sort(aux, count)) == 1)
-	{
-//		write(1, "entra\n", 6);
-		ft_index(aux, count);
-	}
-	return (aux);
+	printf("%d\n", aux->next->next->next->next->index);
+	printf("%d\n", aux->next->next->next->next->next->index);
+	ft_index(aux, count);
+//	if ((index_is_sort(aux, count)) == 1)
+//	{
+//		ft_index(aux, count);
+//	}
+//	else
+//	{
+//		printf("ok\n");
+//		return (aux);
+//	}
 }
