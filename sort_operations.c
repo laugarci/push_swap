@@ -103,7 +103,7 @@ void	make_pb(t_list	**stack_b, t_list **stack_a)
 			*stack_b = first_node_a;
 		}
 	}
-
+	return (*stack_b);
 }
 
 void	make_ra(t_list **stack_a)
