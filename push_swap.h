@@ -6,7 +6,7 @@
 /*   By: laugarci <laugarci@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/24 16:30:50 by laugarci          #+#    #+#             */
-/*   Updated: 2023/04/27 08:01:08 by laugarci         ###   ########.fr       */
+/*   Updated: 2023/04/27 16:56:06 by laugarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,7 @@ int			index_is_sort(t_list *stack_a, int count);
 t_list		*ft_init_index(t_list *stack_a);
 int			ft_find_index(t_list *stack_a);
 void		ft_index_order(t_list *stack_a, t_list *stack_b);
+int			malloc_stack_b(t_list *stack_a, t_list **stack_b);
 
 //Sorting operationst
 void	make_sa(t_list **stack_a);

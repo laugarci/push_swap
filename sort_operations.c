@@ -6,7 +6,7 @@
 /*   By: laugarci <laugarci@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/24 16:09:36 by laugarci          #+#    #+#             */
-/*   Updated: 2023/04/24 18:01:26 by laugarci         ###   ########.fr       */
+/*   Updated: 2023/04/27 16:53:24 by laugarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,7 +103,6 @@ void	make_pb(t_list	**stack_b, t_list **stack_a)
 			*stack_b = first_node_a;
 		}
 	}
-	return (*stack_b);
 }
 
 void	make_ra(t_list **stack_a)

@@ -6,7 +6,7 @@
 /*   By: laugarci <laugarci@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/27 07:47:39 by laugarci          #+#    #+#             */
-/*   Updated: 2023/04/27 08:04:00 by laugarci         ###   ########.fr       */
+/*   Updated: 2023/04/27 17:05:14 by laugarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,18 @@
 void	ft_index_order(t_list *stack_a, t_list *stack_b)
 {
 	int bit;
-
+	int	i;
+	
+	i = 0;
 	bit = 1;
 	while (stack_a != NULL)
 	{
-		if (stack_a->index & bit)
-		{
-			make_pb(&stack_a, &stack_b);
-		}
+		if (stack_a->index & 1)
+			make_pb(&stack_b, &stack_a);
 		stack_a = stack_a->next;
 	}
+	write(1, "sale\n", 5);
+//	printf("%d\n", stack_b->val);
+//	printf("%d\n", stack_b->next->val);
+//	printf("%d\n", stack_b->next->next->val);
 }

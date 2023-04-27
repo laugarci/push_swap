@@ -6,11 +6,31 @@
 /*   By: laugarci <laugarci@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/25 16:54:55 by laugarci          #+#    #+#             */
-/*   Updated: 2023/04/27 07:57:51 by laugarci         ###   ########.fr       */
+/*   Updated: 2023/04/27 17:03:12 by laugarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+int	malloc_stack_b(t_list *stack_a, t_list **stack_b)
+{
+    int size;
+    t_list *current;
+
+	size = 0;
+	current = stack_a;
+    while (current != NULL)
+    {
+        size++;
+        current = current->next;
+    }
+    *stack_b = (t_list *)malloc(sizeof(t_list) * size);
+    if (!*stack_b)
+		return (1);
+	stack_b = NULL;
+	return (0);
+}
+
 
 int	index_is_sort(t_list *stack_a, int count)
 {
@@ -100,9 +120,6 @@ t_list	*ft_index(t_list *stack_a, int count)
 		ft_index(aux, count);
 	}
 	else
-	{
-		printf("ok\n");
 		return (aux);
-	}
 	return (aux);
 }
