@@ -6,7 +6,7 @@
 /*   By: laugarci <laugarci@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/25 16:54:55 by laugarci          #+#    #+#             */
-/*   Updated: 2023/04/27 07:46:21 by laugarci         ###   ########.fr       */
+/*   Updated: 2023/04/27 07:57:51 by laugarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ int		ft_find_index(t_list *stack_a)
 	t_list *aux;
 
 	aux = stack_a;
-	i = 0;
+	i = 1;
 	while (aux != NULL)
 	{
 		if (aux->index != -1)
@@ -79,7 +79,7 @@ t_list	*ft_index(t_list *stack_a, int count)
 	min = find_min_num(stack_a);
 	index = ft_find_index(stack_a);
 	aux = stack_a;
-	if (index != 0)
+	if (index != 1)
 		index = index + 1;
 	while (aux != NULL)
 	{
@@ -101,6 +101,7 @@ t_list	*ft_index(t_list *stack_a, int count)
 	}
 	else
 	{
+		printf("ok\n");
 		return (aux);
 	}
 	return (aux);

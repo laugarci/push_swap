@@ -6,7 +6,7 @@
 /*   By: laugarci <laugarci@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/24 16:05:44 by laugarci          #+#    #+#             */
-/*   Updated: 2023/04/26 17:57:44 by laugarci         ###   ########.fr       */
+/*   Updated: 2023/04/27 08:00:52 by laugarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -116,7 +116,10 @@ int	main(int ac, char **av)
 		if (count <= 5)
 			sort_small_stack(stack_a, stack_b, count);
 		else
+		{
 			stack_a = ft_index(stack_a, count);
+			ft_index_order(stack_a, stack_b);
+		}
 	}
 	return (0);
 }
