@@ -16,17 +16,20 @@ void	ft_index_order(t_list *stack_a, t_list *stack_b)
 {
 	int bit;
 	int	i;
-	
+	t_list	*aux;
+
+
+	aux = stack_a;
 	i = 0;
 	bit = 1;
-	while (stack_a != NULL)
+	while (aux != NULL)
 	{
-		if (stack_a->index & 1)
+		if (aux->index & 1)
 			make_pb(&stack_b, &stack_a);
-		stack_a = stack_a->next;
+		aux = aux->next;
 	}
 	write(1, "sale\n", 5);
-//	printf("%d\n", stack_b->val);
-//	printf("%d\n", stack_b->next->val);
-//	printf("%d\n", stack_b->next->next->val);
+	printf("%d\n", stack_b->val);
+	printf("%d\n", stack_b->next->val);
+	printf("%d\n", stack_b->next->next->val);
 }
