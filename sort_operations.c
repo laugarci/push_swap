@@ -6,7 +6,7 @@
 /*   By: laugarci <laugarci@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/24 16:09:36 by laugarci          #+#    #+#             */
-/*   Updated: 2023/04/27 16:53:24 by laugarci         ###   ########.fr       */
+/*   Updated: 2023/05/02 15:18:02 by laugarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,8 +94,8 @@ void	make_pb(t_list	**stack_b, t_list **stack_a)
 		*stack_a = first_node_a->next;
 		if (*stack_b == NULL)
 		{
-			
-			*stack_b = ft_lstnew(first_node_a->val);
+			*stack_b = first_node_a;
+			first_node_a->next = NULL;
 		}
 		else
 		{

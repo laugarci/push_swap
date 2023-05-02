@@ -6,7 +6,7 @@
 /*   By: laugarci <laugarci@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/27 07:47:39 by laugarci          #+#    #+#             */
-/*   Updated: 2023/04/27 17:05:14 by laugarci         ###   ########.fr       */
+/*   Updated: 2023/05/02 15:22:51 by laugarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,6 @@ void	ft_index_order(t_list *stack_a, t_list *stack_b)
 	i = 0;
 	bit = 1;
 	count = ft_count_nodes(stack_a);
-	
 	while ((ft_stack_is_sort(stack_a, count)) != 1)
 	{			
 		count = ft_count_nodes(stack_a);
@@ -68,6 +67,12 @@ void	ft_index_order(t_list *stack_a, t_list *stack_b)
 		}
 		aux = stack_a;
 		bit = bit << 1;
-		j++;
+	}
+	aux = stack_a;
+	printf("stack_a\n");
+	while (aux != NULL)
+	{
+		printf("%d\n", aux->val);
+		aux = aux->next;
 	}
 }
