@@ -94,8 +94,8 @@ void	make_pb(t_list	**stack_b, t_list **stack_a)
 		*stack_a = first_node_a->next;
 		if (*stack_b == NULL)
 		{
-			*stack_b = first_node_a;
-			first_node_a->next = NULL;
+			
+			*stack_b = ft_lstnew(first_node_a->val);
 		}
 		else
 		{
@@ -109,6 +109,7 @@ void	make_ra(t_list **stack_a)
 {
 	//desplaza hacia arriba todos los elementos del stack a una posición, de forma que el primer elemento se convierte en el último.
 	t_list *current;
+	
 	if (*stack_a != NULL && (*stack_a)->next != NULL)
 	    {
 		    current = *stack_a;

@@ -99,11 +99,11 @@ int	main(int ac, char **av)
 	stack_a = (t_list *)malloc(sizeof(t_list *));
 	if (!stack_a)
 		return (0);
-//	stack_b = (t_list *)malloc(sizeof(t_list));
-//	if (!stack_b)
-//		return (0);
+	stack_b = (t_list *)malloc(sizeof(t_list));
+	if (!stack_b)
+		return (0);
 	stack_a = NULL;
-//	stack_b = NULL;
+	stack_b = NULL;
 	stack_a = ft_copy_stack(stack_a, av);
 	if (ft_stack_is_sort(stack_a, count) == 1)
 	{
@@ -113,13 +113,12 @@ int	main(int ac, char **av)
 	else
 	{
 		stack_a = ft_init_index(stack_a);
-		if (count <= 5)
+		if (count <= 3)
 			sort_small_stack(stack_a, stack_b, count);
 		else
 		{
 			stack_a = ft_index(stack_a, count);
-			if (malloc_stack_b(stack_a, &stack_b) != 1)
-				ft_index_order(stack_a, stack_b);
+			ft_index_order(stack_a, stack_b);
 		}
 	}
 	return (0);
