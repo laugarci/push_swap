@@ -6,7 +6,7 @@
 /*   By: laugarci <laugarci@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/24 16:05:44 by laugarci          #+#    #+#             */
-/*   Updated: 2023/05/02 16:25:50 by laugarci         ###   ########.fr       */
+/*   Updated: 2023/05/02 16:38:54 by laugarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -118,7 +118,7 @@ int	main(int ac, char **av)
 		else
 		{
 			stack_a = ft_index(stack_a, count);
-			ft_index_order(stack_a, stack_b);
+			stack_a = ft_index_order(stack_a, stack_b);
 		}
 	}
 	return (0);

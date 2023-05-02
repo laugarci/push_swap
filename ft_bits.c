@@ -6,7 +6,7 @@
 /*   By: laugarci <laugarci@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/27 07:47:39 by laugarci          #+#    #+#             */
-/*   Updated: 2023/05/02 16:20:02 by laugarci         ###   ########.fr       */
+/*   Updated: 2023/05/02 16:39:18 by laugarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int	ft_count_nodes(t_list *stack_a)
 	return (i);
 }
 
-void	ft_index_order(t_list *stack_a, t_list *stack_b)
+t_list	*ft_index_order(t_list *stack_a, t_list *stack_b)
 {
 	int	bit;
 	int	i;
@@ -82,4 +82,5 @@ void	ft_index_order(t_list *stack_a, t_list *stack_b)
 	}
 	printf("\n");
 	printf("cantidad de numeros: %d\n", nums);
+	return (stack_a);
 }
