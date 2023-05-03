@@ -5,7 +5,7 @@ INCLUDE = -I ./
 
 NORM	= norminette -R CheckForbiddenSourceHeader
 RM		= rm -f
-AR		= ar -rcs
+AR		= $(CC) $(CFLAGS) -o $(NOMBRE) $(OBJS)
 
 SRC_FILES	=  ft_atoi.c \
 		   ft_bits.c \

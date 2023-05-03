@@ -6,7 +6,7 @@
 /*   By: laugarci <laugarci@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/27 07:47:39 by laugarci          #+#    #+#             */
-/*   Updated: 2023/05/02 16:39:18 by laugarci         ###   ########.fr       */
+/*   Updated: 2023/05/03 17:59:27 by laugarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,14 +73,14 @@ t_list	*ft_index_order(t_list *stack_a, t_list *stack_b)
 		bit = bit << 1;
 	}
 	aux = stack_a;
-	printf("Movements: %d", movs);
-/*	printf("stack_a\n"); */
+/*	printf("Movements: %d", movs);
+	printf("stack_a\n");
 	while (aux != NULL)
 	{
 		aux = aux->next;
 		nums++;
 	}
 	printf("\n");
-	printf("cantidad de numeros: %d\n", nums);
+	printf("cantidad de numeros: %d\n", nums);*/
 	return (stack_a);
 }
