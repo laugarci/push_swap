@@ -45,6 +45,7 @@ t_list			*ft_index_order(t_list *stack_a, t_list *stack_b);
 t_list			*malloc_stack_b(t_list *stack_a, t_list **stack_b);
 int			ft_count_nodes(t_list *stack_a);
 void			ft_lstadd_front(t_list **lst, t_list *new);
+void			sort_stack_four(t_list *stack_a);
 
 //Sorting operationst
 void	make_sa(t_list **stack_a);

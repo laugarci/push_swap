@@ -16,11 +16,8 @@ void	sort_small_stack(t_list *stack_a, t_list *stack_b, int count)
 {
 	if (count == 2)
 	{
-		if (stack_a->val > stack_a->next->val)
-		{
-			make_sa(&stack_a);
-			write(1, "sa\n", 3);
-		}
+		make_sa(&stack_a);
+		write(1, "sa\n", 3);
 	}
 	else if (count == 3)
 	{
