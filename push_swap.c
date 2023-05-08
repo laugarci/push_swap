@@ -6,7 +6,7 @@
 /*   By: laugarci <laugarci@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/24 16:05:44 by laugarci          #+#    #+#             */
-/*   Updated: 2023/05/08 19:37:40 by laugarci         ###   ########.fr       */
+/*   Updated: 2023/05/08 20:06:46 by laugarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@ void	ft_free(t_list *stack)
 	aux = stack;
 	while(aux != NULL)
 	{
-		printf("entra\n");
 		stack = aux;
 		aux = stack->next;
 		free(stack);
@@ -118,7 +117,7 @@ int	main(int ac, char **av)
 	stack_a = (t_list *)malloc(sizeof(t_list *));
 	if (!stack_a)
 		return (0);
-	stack_b = (t_list *)malloc(sizeof(t_list));
+	stack_b = (t_list *)malloc(sizeof(t_list *));
 	if (!stack_b)
 		return (0);
 	stack_a = NULL;
@@ -142,5 +141,6 @@ int	main(int ac, char **av)
 	}
 	ft_free(stack_a);
 	ft_free(stack_b);
+	//free(stack_a);
 	return (0);
 }
