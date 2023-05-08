@@ -80,7 +80,6 @@ void	make_pa(t_list **stack_a, t_list **stack_b)
 			*stack_a = first_node_b;
 		}
 	}
-	//ft_push(stack_a, ft_pop(stack_b));
 }
 
 void	make_pb(t_list	**stack_b, t_list **stack_a)

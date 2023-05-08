@@ -35,7 +35,7 @@ t_list	*ft_index_order(t_list *stack_a, t_list *stack_b)
 	t_list	*aux;
 	int movs = 0;
 	int nums = 0;
-
+	int	j = 0;
 	aux = stack_a;
 	i = 0;
 	bit = 1;
@@ -71,14 +71,15 @@ t_list	*ft_index_order(t_list *stack_a, t_list *stack_b)
 		}
 		aux = stack_a;
 		bit = bit << 1;
+		j++;
 	}
 	aux = stack_a;
 /*	printf("Movements: %d", movs);
 	printf("stack_a\n");
 	while (aux != NULL)
 	{
+		printf("%d\n", aux->val);
 		aux = aux->next;
-		nums++;
 	}
 	printf("\n");
 	printf("cantidad de numeros: %d\n", nums);*/

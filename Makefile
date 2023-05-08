@@ -14,7 +14,8 @@ SRC_FILES	=  ft_atoi.c \
 		   push_swap.c \
 		   small_stack.c \
 		   sort_operations.c \
-		   sort_operations_2.c
+		   sort_operations_2.c \
+		   check_args.c \
 
 SRC_OBJ		= $(SRC_FILES:.c=.o)
 

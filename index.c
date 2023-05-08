@@ -95,6 +95,12 @@ t_list	*ft_index(t_list *stack_a, int count)
 	{
 		ft_index(aux, count);
 	}
+//	printf("indices\n");
+//	while (aux != NULL)
+//	{
+//		printf("%d\n", aux->index);
+//		aux = aux->next;
+//	}
 	else
 		return (aux);
 	return (aux);

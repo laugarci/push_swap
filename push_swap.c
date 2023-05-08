@@ -58,7 +58,7 @@ t_list	*ft_copy_stack(t_list *stack_a, char **av)
 	return (stack_a);
 }
 
-void	ft_check_arg(char **str)
+int	ft_check_nums(char **str)
 {
 	int	i;
 	int	j;
@@ -75,11 +75,12 @@ void	ft_check_arg(char **str)
 			else
 			{
 				write(1, "Error\n", 6);
-				return ;
+				return (1);
 			}
 		}
 		i++;
 	}
+	return (0);
 }
 
 int	main(int ac, char **av)
@@ -91,11 +92,12 @@ int	main(int ac, char **av)
 
 	if (ac < 2)
 	{
-		write (1, "Error\n", 6);
+		write(1, "Error\n", 6);
 		return (0);
 	}
 	count = ac - 1;
-	ft_check_arg(av);
+	if (ft_check_nums(av) == 1)
+		return (0);
 	stack_a = (t_list *)malloc(sizeof(t_list *));
 	if (!stack_a)
 		return (0);
@@ -105,21 +107,21 @@ int	main(int ac, char **av)
 	stack_a = NULL;
 	stack_b = NULL;
 	stack_a = ft_copy_stack(stack_a, av);
-	if (ft_stack_is_sort(stack_a, count) == 1)
+	if (check_dup(stack_a) == 1)
 	{
-		printf("stack is sort\n");
+		write(1, "Error\n", 6);
 		return (0);
 	}
+	if (ft_stack_is_sort(stack_a, count) == 1)
+		return (0);
 	else
 	{
 		stack_a = ft_init_index(stack_a);
-		if (count <= 3)
+		stack_a = ft_index(stack_a, count);
+		if (count <= 5)
 			sort_small_stack(stack_a, stack_b, count);
 		else
-		{
-			stack_a = ft_index(stack_a, count);
 			stack_a = ft_index_order(stack_a, stack_b);
-		}
 	}
 	return (0);
 }
