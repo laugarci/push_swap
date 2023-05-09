@@ -20,9 +20,9 @@
 
 typedef struct s_list
 {
-	struct s_list	*next;
-	int				val;
-	int				index;
+	struct s_list		*next;
+	int			val;
+	int			index;
 }	t_list;
 
 //Checks

@@ -60,12 +60,14 @@ int	ft_stack_is_sort(t_list *stack_a, int count)
 t_list	*ft_copy_stack(t_list *stack_a, char **av)
 {
 	t_list	*new;
+	int num;
 	int		i;
 
 	i = 1;
 	while (av[i])
 	{
-		new = ft_lstnew(ft_atoi(av[i]));
+		num = ft_atoi(av[i]);
+		new = ft_lstnew(num);
 		ft_lstadd_back(&stack_a, new);
 		i++;
 	}
@@ -82,7 +84,7 @@ int	ft_check_nums(char **str)
 	{
 		j = 0;
 		while (str[i][j])
-		{
+		{ 
 			if (str[i][j] >= '0' && str[i][j] <= '9' ||
 				str[i][j] == '-' && str[i][j + 1] >= '0' && str[i][j + 1] <= '9')
 			{
@@ -93,6 +95,11 @@ int	ft_check_nums(char **str)
 				write(2, "Error\n", 6);
 				return (1);
 			}
+		}
+		if (j > 10)
+		{
+			write(2, "Error\n", 6);
+			return (1);
 		}
 		i++;
 	}
