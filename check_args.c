@@ -1,11 +1,23 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   check_args.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: laugarci <laugarci@student.42barcel>       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/05/10 12:18:16 by laugarci          #+#    #+#             */
+/*   Updated: 2023/05/10 12:19:20 by laugarci         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 int	check_dup(t_list *stack_a)
 {
-	int num;
-	t_list *aux;
-	t_list *cmp;
-	
+	int		num;
+	t_list	*aux;
+	t_list	*cmp;
+
 	aux = stack_a;
 	while (aux != NULL)
 	{
@@ -23,10 +35,10 @@ int	check_dup(t_list *stack_a)
 
 int	ft_strlen(char *str)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (str[i])
 		i++;
-	return(i);
+	return (i);
 }

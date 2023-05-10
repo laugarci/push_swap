@@ -6,7 +6,7 @@
 /*   By: laugarci <laugarci@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/27 07:47:39 by laugarci          #+#    #+#             */
-/*   Updated: 2023/05/03 17:59:27 by laugarci         ###   ########.fr       */
+/*   Updated: 2023/05/10 12:59:29 by laugarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 int	ft_count_nodes(t_list *stack_a)
 {
-	int i;
-	t_list *aux;
+	int		i;
+	t_list	*aux;
 
 	aux = stack_a;
 	i = 0;
@@ -29,13 +29,11 @@ int	ft_count_nodes(t_list *stack_a)
 
 t_list	*ft_index_order(t_list *stack_a, t_list *stack_b)
 {
-	int	bit;
-	int	i;
-	int	count;
+	int		bit;
+	int		i;
+	int		count;
 	t_list	*aux;
-	int movs = 0;
-	int nums = 0;
-	int	j = 0;
+
 	aux = stack_a;
 	i = 0;
 	bit = 1;
@@ -50,15 +48,13 @@ t_list	*ft_index_order(t_list *stack_a, t_list *stack_b)
 				write(1, "ra\n", 3);
 				make_ra(&stack_a);
 				aux = stack_a;
-				movs++;
 			}
 			else
 			{
 				write(1, "pb\n", 3);
-				make_pb(&stack_b, &stack_a);	
+				make_pb(&stack_b, &stack_a);
 				aux = stack_a;
 				i++;
-				movs++;
 			}
 			count--;
 		}
@@ -67,21 +63,10 @@ t_list	*ft_index_order(t_list *stack_a, t_list *stack_b)
 			make_pa(&stack_a, &stack_b);
 			write(1, "pa\n", 3);
 			i--;
-			movs++;
 		}
 		aux = stack_a;
 		bit = bit << 1;
-		j++;
 	}
 	aux = stack_a;
-/*	printf("Movements: %d", movs);
-	printf("stack_a\n");
-	while (aux != NULL)
-	{
-		printf("%d\n", aux->val);
-		aux = aux->next;
-	}
-	printf("\n");
-	printf("cantidad de numeros: %d\n", nums);*/
 	return (stack_a);
 }

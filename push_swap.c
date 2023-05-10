@@ -6,7 +6,7 @@
 /*   By: laugarci <laugarci@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/24 16:05:44 by laugarci          #+#    #+#             */
-/*   Updated: 2023/05/10 10:21:47 by laugarci         ###   ########.fr       */
+/*   Updated: 2023/05/10 13:01:56 by laugarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_free(t_list **stack)
 {
-	t_list *aux;
+	t_list	*aux;
 
 	aux = *stack;
 	while(aux != NULL)
@@ -60,7 +60,7 @@ int	ft_stack_is_sort(t_list *stack_a, int count)
 t_list	*ft_copy_stack(t_list *stack_a, char **av)
 {
 	t_list	*new;
-	int num;
+	int 	num;
 	int		i;
 
 	i = 1;
@@ -90,7 +90,7 @@ int	ft_check_nums(char **str)
 					j++;
 			else
 			{
-				write(2, "Error\n", 6);
+				write(2, "Error\n", 7);
 				return (1);
 			}
 		}

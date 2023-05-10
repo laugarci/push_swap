@@ -6,7 +6,7 @@
 /*   By: laugarci <laugarci@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/29 13:03:39 by laugarci          #+#    #+#             */
-/*   Updated: 2023/05/10 09:30:58 by laugarci         ###   ########.fr       */
+/*   Updated: 2023/05/10 12:54:04 by laugarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 int	ft_atol(const char *str)
 {
-	int	i;
+	int		i;
 	long	j;
-	int	flag;
+	int		flag;
 
 	i = 0;
 	j = 0;
