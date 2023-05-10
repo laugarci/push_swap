@@ -6,7 +6,7 @@
 /*   By: laugarci <laugarci@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/24 16:05:44 by laugarci          #+#    #+#             */
-/*   Updated: 2023/05/10 09:55:31 by laugarci         ###   ########.fr       */
+/*   Updated: 2023/05/10 10:21:47 by laugarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -114,10 +114,10 @@ int	main(int ac, char **av)
 	count = ac - 1;
 	if (ft_check_nums(av) == 1)
 		return (0);
-	stack_a = (t_list *)malloc(sizeof(t_list *));
+	stack_a = (t_list *)malloc(sizeof(t_list));
 	if (!stack_a)
 		return (0);
-	stack_b = (t_list *)malloc(sizeof(t_list *));
+	stack_b = (t_list *)malloc(sizeof(t_list));
 	if (!stack_b)
 		return (0);
 	stack_a = NULL;
@@ -129,7 +129,9 @@ int	main(int ac, char **av)
 		return (0);
 	}
 	if (ft_stack_is_sort(stack_a, count) == 1)
+	{
 		return (0);
+	}
 	else
 	{
 		stack_a = ft_init_index(stack_a);
@@ -141,6 +143,5 @@ int	main(int ac, char **av)
 	}
 	ft_free(&stack_a);
 	ft_free(&stack_b);
-	//free(stack_a);
 	return (0);
 }
