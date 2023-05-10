@@ -6,7 +6,7 @@
 /*   By: laugarci <laugarci@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/24 16:05:44 by laugarci          #+#    #+#             */
-/*   Updated: 2023/05/10 13:01:56 by laugarci         ###   ########.fr       */
+/*   Updated: 2023/05/10 15:43:18 by laugarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_free(t_list **stack)
 {
-	t_list *nextnode;
+/*	t_list *nextnode;
 
 	if (stack)
 	{
@@ -25,8 +25,8 @@ void	ft_free(t_list **stack)
 			*stack = nextnode;
 		}
 	}
-	*stack = NULL;
-/*	t_list	*aux;
+	*stack = NULL;*/
+	t_list	*aux;
 	t_list *next;
 
 	aux = *stack;
@@ -36,7 +36,7 @@ void	ft_free(t_list **stack)
 		free(aux);
 		aux = next;
 	}
-	*stack = NULL;*/
+	*stack = NULL;
 }
 
 t_list	*ft_init_index(t_list *stack_a)
@@ -126,15 +126,6 @@ int	main(int ac, char **av)
 	count = ac - 1;
 	if (ft_check_nums(av) == 1)
 		return (0);
-//	stack_a = (t_list *)malloc(sizeof(t_list));
-//	if (!stack_a)
-//		return (0);
-//	stack_b = (t_list *)malloc(sizeof(t_list));
-//	if (!stack_b)
-//	{
-//		free(stack_a);
-//		return (0);
-//	}
 	stack_a = NULL;
 	stack_b = NULL;
 	stack_a = ft_copy_stack(stack_a, av);
