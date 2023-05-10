@@ -15,13 +15,14 @@
 void	ft_free(t_list **stack)
 {
 	t_list	*aux;
+	t_list *next;
 
 	aux = *stack;
 	while(aux != NULL)
 	{
-		*stack = aux;
-		aux = aux->next;
-		free(*stack);
+		next = aux->next;
+		free(aux);
+		aux = next;
 	}
 	*stack = NULL;
 }
@@ -119,7 +120,10 @@ int	main(int ac, char **av)
 		return (0);
 	stack_b = (t_list *)malloc(sizeof(t_list));
 	if (!stack_b)
+	{
+		free(stack_a);
 		return (0);
+	}
 	stack_a = NULL;
 	stack_b = NULL;
 	stack_a = ft_copy_stack(stack_a, av);
@@ -143,5 +147,6 @@ int	main(int ac, char **av)
 	}
 	ft_free(&stack_a);
 	ft_free(&stack_b);
+
 	return (0);
 }
