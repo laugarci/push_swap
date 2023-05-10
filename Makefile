@@ -7,7 +7,7 @@ NORM	= norminette -R CheckForbiddenSourceHeader
 RM		= rm -f
 AR		= $(CC) $(CFLAGS) -o $(NOMBRE) $(OBJS)
 
-SRC_FILES	=  ft_atoi.c \
+SRC_FILES	=  ft_atol.c \
 		   ft_bits.c \
 		   index.c \
 		   init_stacks_lists.c \

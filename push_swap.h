@@ -6,7 +6,7 @@
 /*   By: laugarci <laugarci@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/24 16:30:50 by laugarci          #+#    #+#             */
-/*   Updated: 2023/05/02 16:39:39 by laugarci         ###   ########.fr       */
+/*   Updated: 2023/05/10 09:55:43 by laugarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ t_list		*ft_copy_stack(t_list *stack_a, char **av);
 t_list		*ft_lstnew(int val);
 
 //Utils
-int		ft_atoi(const char *str);
+int		ft_atol(const char *str);
 t_list		*ft_lstlast(t_list *lst);
 void		ft_lstadd_back(t_list **stack_a, t_list *new);
 t_list		*ft_lstnew(int val);
@@ -43,7 +43,7 @@ int		ft_stack_is_sort(t_list *stack_a, int count);
 int		find_max_num(t_list *stack_a);
 int		find_min_num(t_list *stack_a);
 int		ft_strlen(char *str);
-void		ft_free(t_list *stack);
+void		ft_free(t_list **stack);
 
 //Index
 t_list		*ft_index(t_list *stack_a, int count);

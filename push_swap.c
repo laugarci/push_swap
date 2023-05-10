@@ -6,24 +6,24 @@
 /*   By: laugarci <laugarci@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/24 16:05:44 by laugarci          #+#    #+#             */
-/*   Updated: 2023/05/08 20:06:46 by laugarci         ###   ########.fr       */
+/*   Updated: 2023/05/10 09:55:31 by laugarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_free(t_list *stack)
+void	ft_free(t_list **stack)
 {
 	t_list *aux;
 
-	aux = stack;
+	aux = *stack;
 	while(aux != NULL)
 	{
-		stack = aux;
-		aux = stack->next;
-		free(stack);
+		*stack = aux;
+		aux = aux->next;
+		free(*stack);
 	}
-	stack = NULL;
+	*stack = NULL;
 }
 
 t_list	*ft_init_index(t_list *stack_a)
@@ -66,7 +66,7 @@ t_list	*ft_copy_stack(t_list *stack_a, char **av)
 	i = 1;
 	while (av[i])
 	{
-		num = ft_atoi(av[i]);
+		num = ft_atol(av[i]);
 		new = ft_lstnew(num);
 		ft_lstadd_back(&stack_a, new);
 		i++;
@@ -84,22 +84,15 @@ int	ft_check_nums(char **str)
 	{
 		j = 0;
 		while (str[i][j])
-		{ 
-			if (str[i][j] >= '0' && str[i][j] <= '9' ||
+		{
+			if (str[i][j] >= '0' && str[i][j] <= '9' && str[i][j + 1] != '-' ||
 				str[i][j] == '-' && str[i][j + 1] >= '0' && str[i][j + 1] <= '9')
-			{
 					j++;
-			}
 			else
 			{
 				write(2, "Error\n", 6);
 				return (1);
 			}
-		}
-		if (j > 10)
-		{
-			write(2, "Error\n", 6);
-			return (1);
 		}
 		i++;
 	}
@@ -113,7 +106,7 @@ int	main(int ac, char **av)
 	t_list	*stack_b;
 	t_list	*new;
 
-	if (ac < 2)
+	if (ac < 2 || ft_strlen(av[1]) == 0)
 	{
 		write(2, "Error\n", 6);
 		return (0);
@@ -146,8 +139,8 @@ int	main(int ac, char **av)
 		else
 			stack_a = ft_index_order(stack_a, stack_b);
 	}
-	ft_free(stack_a);
-	ft_free(stack_b);
+	ft_free(&stack_a);
+	ft_free(&stack_b);
 	//free(stack_a);
 	return (0);
 }
