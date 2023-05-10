@@ -14,7 +14,19 @@
 
 void	ft_free(t_list **stack)
 {
-	t_list	*aux;
+	t_list *nextnode;
+
+	if (stack)
+	{
+		while(*stack)
+		{
+			nextnode = (*stack)->next;
+			free(*stack);
+			*stack = nextnode;
+		}
+	}
+	*stack = NULL;
+/*	t_list	*aux;
 	t_list *next;
 
 	aux = *stack;
@@ -24,7 +36,7 @@ void	ft_free(t_list **stack)
 		free(aux);
 		aux = next;
 	}
-	*stack = NULL;
+	*stack = NULL;*/
 }
 
 t_list	*ft_init_index(t_list *stack_a)
@@ -105,7 +117,6 @@ int	main(int ac, char **av)
 	int		count;
 	t_list	*stack_a;
 	t_list	*stack_b;
-	t_list	*new;
 
 	if (ac < 2 || ft_strlen(av[1]) == 0)
 	{
@@ -129,11 +140,15 @@ int	main(int ac, char **av)
 	stack_a = ft_copy_stack(stack_a, av);
 	if (check_dup(stack_a) == 1)
 	{
+		ft_free(&stack_a);
+		ft_free(&stack_b);
 		write(2, "Error\n", 6);
 		return (0);
 	}
 	if (ft_stack_is_sort(stack_a, count) == 1)
 	{
+		ft_free(&stack_a);
+		ft_free(&stack_b);
 		return (0);
 	}
 	else
