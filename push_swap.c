@@ -126,15 +126,15 @@ int	main(int ac, char **av)
 	count = ac - 1;
 	if (ft_check_nums(av) == 1)
 		return (0);
-	stack_a = (t_list *)malloc(sizeof(t_list));
-	if (!stack_a)
-		return (0);
-	stack_b = (t_list *)malloc(sizeof(t_list));
-	if (!stack_b)
-	{
-		free(stack_a);
-		return (0);
-	}
+//	stack_a = (t_list *)malloc(sizeof(t_list));
+//	if (!stack_a)
+//		return (0);
+//	stack_b = (t_list *)malloc(sizeof(t_list));
+//	if (!stack_b)
+//	{
+//		free(stack_a);
+//		return (0);
+//	}
 	stack_a = NULL;
 	stack_b = NULL;
 	stack_a = ft_copy_stack(stack_a, av);
