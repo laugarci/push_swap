@@ -14,18 +14,6 @@
 
 void	ft_free(t_list **stack)
 {
-/*	t_list *nextnode;
-
-	if (stack)
-	{
-		while(*stack)
-		{
-			nextnode = (*stack)->next;
-			free(*stack);
-			*stack = nextnode;
-		}
-	}
-	*stack = NULL;*/
 	t_list	*aux;
 	t_list *next;
 
