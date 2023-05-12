@@ -76,10 +76,10 @@ void	sort_three(t_list *stack_a)
 		{
 			if (stack_a->next->val > stack_a->next->next->val)
 			{
+				make_ra(&stack_a);
 				make_sa(&stack_a);
-				make_rra(&stack_a);
+				write(1, "ra\n", 3);
 				write(1, "sa\n", 3);
-				write(1, "rra\n", 4);
 			}
 			else if (stack_a->next->val < stack_a->next->next->val)
 			{
@@ -98,15 +98,19 @@ void	sort_three(t_list *stack_a)
 	{
 		if (stack_a->val < stack_a->next->next->val)
 		{
-			make_rra(&stack_a);
 			make_sa(&stack_a);
-			write(1, "rra\n", 4);
+			make_ra(&stack_a);
 			write(1, "sa\n", 3);
+			write(1, "ra\n", 3);
 		}
 		else
 		{
-			make_rra(&stack_a);
-			write(1, "rra\n", 4);
+			make_sa(&stack_a);
+			make_ra(&stack_a);
+			make_sa(&stack_a);
+			write(1, "sa\n", 3);
+			write(1, "ra\n", 3);
+			write(1, "sa\n", 3);
 		}
 	}
 }
