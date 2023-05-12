@@ -14,7 +14,6 @@
 
 t_list	*sort_five(t_list *stack_a, t_list *stack_b, int count)
 {
-
 	while ((ft_stack_is_sort(stack_a, count) != 1))
 	{
 		while (stack_a->index != 0)
@@ -77,7 +76,6 @@ t_list	*sort_four(t_list *stack_a, t_list *stack_b, int count)
 	return (stack_a);
 }
 
-
 t_list	*sort_three(t_list *stack_a)
 {
 	if (stack_a->val > stack_a->next->val)
@@ -104,7 +102,7 @@ t_list	*sort_three(t_list *stack_a)
 		}
 	}
 	if (stack_a->next->val > stack_a->val
-			&& stack_a->next->val > stack_a->next->next->val)
+		&& stack_a->next->val > stack_a->next->next->val)
 	{
 		if (stack_a->val < stack_a->next->next->val)
 		{

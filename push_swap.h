@@ -23,7 +23,7 @@ typedef struct s_list
 	struct s_list		*next;
 	int			val;
 	int			index;
-}	t_list;
+}				t_list;
 
 //Checks
 int		ft_check_nums(char **str);

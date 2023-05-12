@@ -15,10 +15,10 @@
 void	ft_free(t_list **stack)
 {
 	t_list	*aux;
-	t_list *next;
+	t_list	*next;
 
 	aux = *stack;
-	while(aux != NULL)
+	while (aux != NULL)
 	{
 		next = aux->next;
 		free(aux);
@@ -29,7 +29,7 @@ void	ft_free(t_list **stack)
 
 t_list	*ft_init_index(t_list *stack_a)
 {
-	t_list *aux;
+	t_list	*aux;
 
 	aux = stack_a;
 	while (aux != NULL)
@@ -60,9 +60,9 @@ int	ft_stack_is_sort(t_list *stack_a, int count)
 
 t_list	*ft_copy_stack(t_list *stack_a, char **av)
 {
+	int	num;
+	int	i;
 	t_list	*new;
-	int 	num;
-	int		i;
 
 	i = 1;
 	while (av[i])
@@ -87,7 +87,7 @@ int	ft_check_nums(char **str)
 		while (str[i][j])
 		{
 			if (str[i][j] >= '0' && str[i][j] <= '9' && str[i][j + 1] != '-' ||
-				str[i][j] == '-' && str[i][j + 1] >= '0' && str[i][j + 1] <= '9')
+			str[i][j] == '-' && str[i][j + 1] >= '0' && str[i][j + 1] <= '9')
 					j++;
 			else
 			{
@@ -143,6 +143,5 @@ int	main(int ac, char **av)
 	}
 	ft_free(&stack_a);
 	ft_free(&stack_b);
-
 	return (0);
 }

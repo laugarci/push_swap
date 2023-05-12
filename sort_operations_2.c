@@ -14,7 +14,6 @@
 
 void	make_rb(t_list **stack_b)
 {
-	//desplaza hacia arriba todos los elementos del stack b una posición, de forma que el primer elemento se convierte en el último.
 	t_list *current;
 	if (*stack_b != NULL && (*stack_b)->next != NULL)
 	{
@@ -27,14 +26,8 @@ void	make_rb(t_list **stack_b)
 	}
 }
 
-void	make_rr(t_list **stack_a, t_list **stack_b)
-{
-	//desplaza al mismo tiempo todos los elementos del stack a y del stack b una posición hacia arriba, de forma que el primer elemento se convierte en el último
-}
-
 void	make_rra(t_list **stack_a)
 {
-	// desplaza hacia abajo todos los elementos del stack a una posición, de forma que el último elemento se convierte en el primero.i
 	t_list *current;   
        	t_list *prev;
 
@@ -54,7 +47,6 @@ void	make_rra(t_list **stack_a)
 
 void	make_rrb(t_list **stack_b)
 {
-	//desplaza hacia abajo todos los elementos del stack b una posición, de forma que el último elemento se convierte en el primero
 	t_list	*current;
 	t_list	*prev;
 
@@ -68,9 +60,4 @@ void	make_rrb(t_list **stack_b)
 	current->next = *stack_b;
 	*stack_b = current;
 	prev->next = NULL;
-}
-
-void	make_rrr(t_list **stack_a, t_list **stack_b)
-{
-	//desplaza al mismo tiempo todos los elementos del stack a y del stack b una posición hacia abajo, de forma que el último elemento se convierte en el primero.
 }
