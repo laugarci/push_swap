@@ -49,7 +49,7 @@ t_list	*sort_five(t_list *stack_a, t_list *stack_b, int count)
 			}
 			make_pb(&stack_b, &stack_a);
 			write(1, "pb\n", 3);
-			sort_three(stack_a);
+			stack_a = sort_three(stack_a);
 			make_pa(&stack_a, &stack_b);
 			write(1, "pa\n", 3);
 			make_pa(&stack_a, &stack_b);
@@ -70,7 +70,7 @@ t_list	*sort_four(t_list *stack_a, t_list *stack_b, int count)
 		}
 		make_pb(&stack_b, &stack_a);
 		write(1, "pb\n", 3);
-		sort_three(stack_a);
+		stack_a = sort_three(stack_a);
 		make_pa(&stack_a, &stack_b);
 		write(1, "pa\n", 3);
 	}
@@ -134,10 +134,10 @@ t_list	*sort_small_stack(t_list *stack_a, t_list *stack_b, int count)
 		write(1, "sa\n", 3);
 	}
 	else if (count == 3)
-		sort_three(stack_a);
+		stack_a = sort_three(stack_a);
 	else if (count == 4)
-		sort_four(stack_a, stack_b, count);
+		stack_a = sort_four(stack_a, stack_b, count);
 	else if (count == 5)
-		sort_five(stack_a, stack_b, count);
+		stack_a = sort_five(stack_a, stack_b, count);
 	return (stack_a);
 }
