@@ -136,7 +136,7 @@ int	main(int ac, char **av)
 		stack_a = ft_index(stack_a, count);
 		if (count <= 5)
 		{
-			sort_small_stack(stack_a, stack_b, count);
+			stack_a = sort_small_stack(stack_a, stack_b, count);
 		}
 		else
 			stack_a = ft_index_order(stack_a, stack_b);

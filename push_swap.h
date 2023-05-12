@@ -54,9 +54,11 @@ int		ft_find_index(t_list *stack_a);
 //Order stacks
 t_list		*ft_index_order(t_list *stack_a, t_list *stack_b);
 int		ft_count_nodes(t_list *stack_a);
+
 void		ft_lstadd_front(t_list **lst, t_list *new);
-void		sort_four(t_list *stack_a, t_list *stack_b, int count);
-void		sort_three(t_list *stack_a);
+t_list		*sort_four(t_list *stack_a, t_list *stack_b, int count);
+t_list		*sort_three(t_list *stack_a);
+t_list		*sort_five(t_list *stack_a, t_list *stack_b, int count);
 
 //Sorting operationst
 void		make_sa(t_list **stack_a);
@@ -72,6 +74,6 @@ void		make_rrb(t_list **stack_b);
 void		make_rrr(t_list **stack_a, t_list **stack_b);
 
 //Sort small stack
-void		sort_small_stack(t_list *stack_a, t_list *stack_b, int count);
+t_list		*sort_small_stack(t_list *stack_a, t_list *stack_b, int count);
 
 #endif

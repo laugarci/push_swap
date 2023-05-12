@@ -12,7 +12,7 @@
 
 #include "push_swap.h"
 
-void	sort_five(t_list *stack_a, t_list *stack_b, int count)
+t_list	*sort_five(t_list *stack_a, t_list *stack_b, int count)
 {
 
 	while ((ft_stack_is_sort(stack_a, count) != 1))
@@ -34,10 +34,18 @@ void	sort_five(t_list *stack_a, t_list *stack_b, int count)
 		{
 			make_pb(&stack_b, &stack_a);
 			write(1, "pb\n", 3);
-			while (stack_a->index != 1)
+			if (stack_a->next->index == 1)
 			{
-				make_rra(&stack_a);
-				write(1, "rra\n", 4);
+				make_sa(&stack_a);
+				write(1, "sa\n", 3);
+			}
+			else
+			{
+				while (stack_a->index != 1)
+				{
+					make_rra(&stack_a);
+					write(1, "rra\n", 4);
+				}
 			}
 			make_pb(&stack_b, &stack_a);
 			write(1, "pb\n", 3);
@@ -48,9 +56,10 @@ void	sort_five(t_list *stack_a, t_list *stack_b, int count)
 			write(1, "pa\n", 3);
 		}
 	}
+	return (stack_a);
 }
 
-void	sort_four(t_list *stack_a, t_list *stack_b, int count)
+t_list	*sort_four(t_list *stack_a, t_list *stack_b, int count)
 {
 	while ((ft_stack_is_sort(stack_a, count) != 1))
 	{
@@ -65,10 +74,11 @@ void	sort_four(t_list *stack_a, t_list *stack_b, int count)
 		make_pa(&stack_a, &stack_b);
 		write(1, "pa\n", 3);
 	}
+	return (stack_a);
 }
 
 
-void	sort_three(t_list *stack_a)
+t_list	*sort_three(t_list *stack_a)
 {
 	if (stack_a->val > stack_a->next->val)
 	{
@@ -113,9 +123,10 @@ void	sort_three(t_list *stack_a)
 			write(1, "sa\n", 3);
 		}
 	}
+	return (stack_a);
 }
 
-void	sort_small_stack(t_list *stack_a, t_list *stack_b, int count)
+t_list	*sort_small_stack(t_list *stack_a, t_list *stack_b, int count)
 {
 	if (count == 2)
 	{
@@ -128,4 +139,5 @@ void	sort_small_stack(t_list *stack_a, t_list *stack_b, int count)
 		sort_four(stack_a, stack_b, count);
 	else if (count == 5)
 		sort_five(stack_a, stack_b, count);
+	return (stack_a);
 }
