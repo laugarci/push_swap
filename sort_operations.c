@@ -6,7 +6,7 @@
 /*   By: laugarci <laugarci@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/24 16:09:36 by laugarci          #+#    #+#             */
-/*   Updated: 2023/05/02 15:18:02 by laugarci         ###   ########.fr       */
+/*   Updated: 2023/05/13 15:43:52 by laugarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	make_sa(t_list **stack_a)
 {
 	t_list		*first;
 	t_list		*second;
-	int		temp;
+	int			temp;
 
 	if (*stack_a == NULL || (*stack_a)->next == NULL)
 		return ;
@@ -27,23 +27,6 @@ void	make_sa(t_list **stack_a)
 	second->val = temp;
 	first->next = second;
 	*stack_a = first;
-}
-
-void	make_sb(t_list **stack_b)
-{
-	t_list	*first;
-	t_list	*second;
-	int		temp;
-
-	if (*stack_b == NULL || (*stack_b)->next == NULL)
-		return ;
-	first = *stack_b;
-	second = (*stack_b)->next;
-	temp = first->val;
-	first->val = second->val;
-	second->val = temp;
-	first->next = second;
-	*stack_b = first;
 }
 
 void	make_pa(t_list **stack_a, t_list **stack_b)
@@ -101,4 +84,23 @@ void	make_ra(t_list **stack_a)
 		*stack_a = (*stack_a)->next;
 		current->next->next = NULL;
 	}
+}
+
+void	make_rra(t_list **stack_a)
+{
+	t_list	*current;
+	t_list	*prev;
+
+	current = *stack_a;
+	prev = NULL;
+	if (current == NULL || current->next == NULL)
+		return ;
+	while (current->next != NULL)
+	{
+		prev = current;
+		current = current->next;
+	}
+	current->next = *stack_a;
+	*stack_a = current;
+	prev->next = NULL;
 }

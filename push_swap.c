@@ -6,7 +6,7 @@
 /*   By: laugarci <laugarci@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/24 16:05:44 by laugarci          #+#    #+#             */
-/*   Updated: 2023/05/10 15:43:18 by laugarci         ###   ########.fr       */
+/*   Updated: 2023/05/13 16:30:23 by laugarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,8 +60,8 @@ int	ft_stack_is_sort(t_list *stack_a, int count)
 
 t_list	*ft_copy_stack(t_list *stack_a, char **av)
 {
-	int	num;
-	int	i;
+	int		num;
+	int		i;
 	t_list	*new;
 
 	i = 1;
@@ -135,9 +135,7 @@ int	main(int ac, char **av)
 		stack_a = ft_init_index(stack_a);
 		stack_a = ft_index(stack_a, count);
 		if (count <= 5)
-		{
 			stack_a = sort_small_stack(stack_a, stack_b, count);
-		}
 		else
 			stack_a = ft_index_order(stack_a, stack_b);
 	}
