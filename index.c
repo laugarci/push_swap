@@ -6,7 +6,7 @@
 /*   By: laugarci <laugarci@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/25 16:54:55 by laugarci          #+#    #+#             */
-/*   Updated: 2023/05/10 13:01:17 by laugarci         ###   ########.fr       */
+/*   Updated: 2023/05/13 16:33:42 by laugarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,10 +91,6 @@ t_list	*ft_index(t_list *stack_a, int count)
 	}
 	aux = stack_a;
 	if ((index_is_sort(aux, count)) == 1)
-	{
 		ft_index(aux, count);
-	}
-	else
-		return (aux);
 	return (aux);
 }
