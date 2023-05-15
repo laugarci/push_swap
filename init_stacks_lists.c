@@ -6,7 +6,7 @@
 /*   By: laugarci <laugarci@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/24 16:03:53 by laugarci          #+#    #+#             */
-/*   Updated: 2023/04/24 16:05:04 by laugarci         ###   ########.fr       */
+/*   Updated: 2023/05/15 17:07:01 by laugarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,4 +64,19 @@ void	ft_lstadd_front(t_list **lst, t_list *new)
 		new->next = *lst;
 		*lst = new;
 	}
+}
+
+void	ft_free(t_list **stack)
+{
+	t_list	*aux;
+	t_list	*next;
+
+	aux = *stack;
+	while (aux != NULL)
+	{
+		next = aux->next;
+		free(aux);
+		aux = next;
+	}
+	*stack = NULL;
 }

@@ -6,7 +6,7 @@
 /*   By: laugarci <laugarci@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/29 13:03:39 by laugarci          #+#    #+#             */
-/*   Updated: 2023/05/13 16:29:39 by laugarci         ###   ########.fr       */
+/*   Updated: 2023/05/15 17:02:31 by laugarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,8 +33,7 @@ int	ft_atol(const char *str)
 		j = j * 10;
 		j = j + str[i++] - 48;
 	}
-	if (j * flag > INT_MAX || j * flag < INT_MIN
-		|| j * flag > LONG_MAX || j * flag < LONG_MIN)
+	if ((j * flag) > INT_MAX || (j * flag) < INT_MIN)
 	{
 		write(2, "Error\n", 6);
 		return (0);

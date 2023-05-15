@@ -6,7 +6,7 @@
 /*   By: laugarci <laugarci@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/27 07:47:39 by laugarci          #+#    #+#             */
-/*   Updated: 2023/05/10 12:59:29 by laugarci         ###   ########.fr       */
+/*   Updated: 2023/05/15 17:57:37 by laugarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,35 +38,28 @@ t_list	*ft_index_order(t_list *stack_a, t_list *stack_b)
 	i = 0;
 	bit = 1;
 	count = ft_count_nodes(stack_a);
-	while ((ft_stack_is_sort(stack_a, count)) != 1)
+	while ((ft_stack_is_sort(stack_a)) != 1)
 	{			
 		count = ft_count_nodes(stack_a);
 		while (count != 0 && aux != NULL)
 		{
 			if (aux->index & bit)
-			{
-				write(1, "ra\n", 3);
 				make_ra(&stack_a);
-				aux = stack_a;
-			}
 			else
 			{
-				write(1, "pb\n", 3);
 				make_pb(&stack_b, &stack_a);
-				aux = stack_a;
 				i++;
 			}
+			aux = stack_a;
 			count--;
 		}
 		while (i != 0)
 		{
 			make_pa(&stack_a, &stack_b);
-			write(1, "pa\n", 3);
 			i--;
 		}
 		aux = stack_a;
 		bit = bit << 1;
 	}
-	aux = stack_a;
 	return (stack_a);
 }

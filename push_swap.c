@@ -6,26 +6,11 @@
 /*   By: laugarci <laugarci@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/24 16:05:44 by laugarci          #+#    #+#             */
-/*   Updated: 2023/05/13 16:30:23 by laugarci         ###   ########.fr       */
+/*   Updated: 2023/05/15 17:27:47 by laugarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-void	ft_free(t_list **stack)
-{
-	t_list	*aux;
-	t_list	*next;
-
-	aux = *stack;
-	while (aux != NULL)
-	{
-		next = aux->next;
-		free(aux);
-		aux = next;
-	}
-	*stack = NULL;
-}
 
 t_list	*ft_init_index(t_list *stack_a)
 {
@@ -41,7 +26,7 @@ t_list	*ft_init_index(t_list *stack_a)
 	return (aux);
 }
 
-int	ft_stack_is_sort(t_list *stack_a, int count)
+int	ft_stack_is_sort(t_list *stack_a)
 {
 	t_list	*aux;
 
@@ -86,14 +71,19 @@ int	ft_check_nums(char **str)
 		j = 0;
 		while (str[i][j])
 		{
-			if (str[i][j] >= '0' && str[i][j] <= '9' && str[i][j + 1] != '-' ||
-			str[i][j] == '-' && str[i][j + 1] >= '0' && str[i][j + 1] <= '9')
+			if ((str[i][j] >= '0' && str[i][j] <= '9' && str[i][j + 1] != '-') ||
+			(str[i][j] == '-' && str[i][j + 1] >= '0' && str[i][j + 1] <= '9'))
 					j++;
 			else
 			{
-				write(2, "Error\n", 7);
+				write(2, "Error\n", 6);
 				return (1);
 			}
+		}
+		if (j > 11)
+		{
+			write(2, "Error\n", 6);
+			return (1);
 		}
 		i++;
 	}
@@ -124,7 +114,7 @@ int	main(int ac, char **av)
 		write(2, "Error\n", 6);
 		return (0);
 	}
-	if (ft_stack_is_sort(stack_a, count) == 1)
+	if (ft_stack_is_sort(stack_a) == 1)
 	{
 		ft_free(&stack_a);
 		ft_free(&stack_b);

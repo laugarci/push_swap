@@ -6,7 +6,7 @@
 /*   By: laugarci <laugarci@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/10 12:18:16 by laugarci          #+#    #+#             */
-/*   Updated: 2023/05/10 12:19:20 by laugarci         ###   ########.fr       */
+/*   Updated: 2023/05/15 17:26:39 by laugarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 int	check_dup(t_list *stack_a)
 {
-	int		num;
 	t_list	*aux;
 	t_list	*cmp;
 
