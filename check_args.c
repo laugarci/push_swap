@@ -6,7 +6,7 @@
 /*   By: laugarci <laugarci@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/10 12:18:16 by laugarci          #+#    #+#             */
-/*   Updated: 2023/05/15 17:26:39 by laugarci         ###   ########.fr       */
+/*   Updated: 2023/05/15 18:07:15 by laugarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,10 @@ int	check_dup(t_list *stack_a)
 		while (cmp != NULL)
 		{
 			if (aux->val == cmp->val)
+			{
+				write(2, "Error\n", 6);
 				return (1);
+			}
 			cmp = cmp->next;
 		}
 		aux = aux->next;

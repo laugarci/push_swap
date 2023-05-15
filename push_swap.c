@@ -6,7 +6,7 @@
 /*   By: laugarci <laugarci@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/24 16:05:44 by laugarci          #+#    #+#             */
-/*   Updated: 2023/05/15 17:27:47 by laugarci         ###   ########.fr       */
+/*   Updated: 2023/05/15 18:13:42 by laugarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,14 +75,10 @@ int	ft_check_nums(char **str)
 			(str[i][j] == '-' && str[i][j + 1] >= '0' && str[i][j + 1] <= '9'))
 					j++;
 			else
-			{
-				write(2, "Error\n", 6);
 				return (1);
-			}
 		}
 		if (j > 11)
 		{
-			write(2, "Error\n", 6);
 			return (1);
 		}
 		i++;
@@ -96,39 +92,27 @@ int	main(int ac, char **av)
 	t_list	*stack_a;
 	t_list	*stack_b;
 
-	if (ac < 2 || ft_strlen(av[1]) == 0)
+	if (ac < 2 || ft_strlen(av[1]) == 0 || (ft_check_nums(av) == 1))
 	{
 		write(2, "Error\n", 6);
 		return (0);
 	}
 	count = ac - 1;
-	if (ft_check_nums(av) == 1)
-		return (0);
 	stack_a = NULL;
 	stack_b = NULL;
 	stack_a = ft_copy_stack(stack_a, av);
-	if (check_dup(stack_a) == 1)
-	{
-		ft_free(&stack_a);
-		ft_free(&stack_b);
-		write(2, "Error\n", 6);
-		return (0);
-	}
-	if (ft_stack_is_sort(stack_a) == 1)
+	if (check_dup(stack_a) == 1 || (ft_stack_is_sort(stack_a) == 1))
 	{
 		ft_free(&stack_a);
 		ft_free(&stack_b);
 		return (0);
 	}
+	stack_a = ft_init_index(stack_a);
+	stack_a = ft_index(stack_a, count);
+	if (count <= 5)
+		stack_a = sort_small_stack(stack_a, stack_b, count);
 	else
-	{
-		stack_a = ft_init_index(stack_a);
-		stack_a = ft_index(stack_a, count);
-		if (count <= 5)
-			stack_a = sort_small_stack(stack_a, stack_b, count);
-		else
-			stack_a = ft_index_order(stack_a, stack_b);
-	}
+		stack_a = ft_index_order(stack_a, stack_b);
 	ft_free(&stack_a);
 	ft_free(&stack_b);
 	return (0);
