@@ -6,7 +6,7 @@
 /*   By: laugarci <laugarci@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/24 16:05:44 by laugarci          #+#    #+#             */
-/*   Updated: 2023/05/15 18:13:42 by laugarci         ###   ########.fr       */
+/*   Updated: 2023/05/15 18:18:15 by laugarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,10 +93,9 @@ int	main(int ac, char **av)
 	t_list	*stack_b;
 
 	if (ac < 2 || ft_strlen(av[1]) == 0 || (ft_check_nums(av) == 1))
-	{
 		write(2, "Error\n", 6);
+	if (ac < 2 || ft_strlen(av[1]) == 0 || (ft_check_nums(av) == 1))
 		return (0);
-	}
 	count = ac - 1;
 	stack_a = NULL;
 	stack_b = NULL;
