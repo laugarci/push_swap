@@ -6,7 +6,7 @@
 /*   By: laugarci <laugarci@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/24 16:09:52 by laugarci          #+#    #+#             */
-/*   Updated: 2023/05/15 17:40:48 by laugarci         ###   ########.fr       */
+/*   Updated: 2023/05/17 17:58:17 by laugarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,18 +89,5 @@ t_list	*sort_three(t_list *stack_a)
 		else
 			stack_a = sort_three_aux_two(stack_a);
 	}
-	return (stack_a);
-}
-
-t_list	*sort_small_stack(t_list *stack_a, t_list *stack_b, int count)
-{
-	if (count == 2)
-		make_sa(&stack_a);
-	else if (count == 3)
-		stack_a = sort_three(stack_a);
-	else if (count == 4)
-		stack_a = sort_four(stack_a, stack_b);
-	else if (count == 5)
-		stack_a = sort_five(stack_a, stack_b);
 	return (stack_a);
 }

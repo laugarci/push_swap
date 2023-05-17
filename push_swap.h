@@ -6,7 +6,7 @@
 /*   By: laugarci <laugarci@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/24 16:30:50 by laugarci          #+#    #+#             */
-/*   Updated: 2023/05/15 17:14:26 by laugarci         ###   ########.fr       */
+/*   Updated: 2023/05/17 18:14:34 by laugarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,10 +25,17 @@ typedef struct s_list
 	int					index;
 }						t_list;
 
+typedef struct list_aux {
+	int					count;
+	int					i;
+	int					bit;
+}						t_aux;
+
 //Checks
 int			ft_check_nums(char **str);
 int			check_dup(t_list *stack_a);
 int			check_spaces(char *str);
+int			ft_isdigit(int c);
 
 //Preparar stacks
 t_list		*ft_copy_stack(t_list *stack_a, char **av);
@@ -58,19 +65,14 @@ void		ft_lstadd_front(t_list **lst, t_list *new);
 t_list		*sort_four(t_list *stack_a, t_list *stack_b);
 t_list		*sort_three(t_list *stack_a);
 t_list		*sort_five(t_list *stack_a, t_list *stack_b);
+t_list		*sort_small_stack(t_list *stack_a, t_list *stack_b, int count);
 
 //Sorting operationst
 void		make_sa(t_list **stack_a);
-void		make_sb(t_list **stack_b);
-void		make_ss(t_list **stack_a, t_list **stack_b);
 void		make_pa(t_list **stack_a, t_list **stack_b);
 void		make_pb(t_list **stack_b, t_list **stack_a);
 void		make_ra(t_list **stack_a);
-void		make_rb(t_list **stack_b);
-void		make_rr(t_list **stack_a, t_list **stack_b);
 void		make_rra(t_list **stack_a);
-void		make_rrb(t_list **stack_b);
-void		make_rrr(t_list **stack_a, t_list **stack_b);
 
 //Sort small stack
 t_list		*sort_small_stack(t_list *stack_a, t_list *stack_b, int count);

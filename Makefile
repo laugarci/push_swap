@@ -6,7 +6,7 @@
 #    By: laugarci <laugarci@student.42barcel>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/10 12:17:45 by laugarci          #+#    #+#              #
-#    Updated: 2023/05/13 15:44:44 by laugarci         ###   ########.fr        #
+#    Updated: 2023/05/17 18:13:24 by laugarci         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,8 +25,10 @@ SRC_FILES	=  ft_atol.c \
 		   init_stacks_lists.c \
 		   push_swap.c \
 		   small_stack.c \
+		   small_stack_aux.c \
 		   sort_operations.c \
 		   check_args.c \
+		   ft_isdigit.c
 
 SRC_OBJ		= $(SRC_FILES:.c=.o)
 

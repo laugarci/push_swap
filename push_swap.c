@@ -6,7 +6,7 @@
 /*   By: laugarci <laugarci@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/24 16:05:44 by laugarci          #+#    #+#             */
-/*   Updated: 2023/05/15 18:18:15 by laugarci         ###   ########.fr       */
+/*   Updated: 2023/05/17 18:40:13 by laugarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,19 +68,17 @@ int	ft_check_nums(char **str)
 	i = 1;
 	while (str[i])
 	{
-		j = 0;
+		if (!(ft_isdigit(str[i][0])) && ((str[i][0] != '-') ||
+					!str[i][1]))
+			return (1);
+		j = 1;
 		while (str[i][j])
 		{
-			if ((str[i][j] >= '0' && str[i][j] <= '9' && str[i][j + 1] != '-') ||
-			(str[i][j] == '-' && str[i][j + 1] >= '0' && str[i][j + 1] <= '9'))
-					j++;
-			else
+			if (!ft_isdigit(str[i][j++]))
 				return (1);
 		}
 		if (j > 11)
-		{
 			return (1);
-		}
 		i++;
 	}
 	return (0);
