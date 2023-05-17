@@ -102,8 +102,7 @@ int	main(int ac, char **av)
 	stack_a = ft_copy_stack(stack_a, av);
 	if (check_dup(stack_a) == 1 || (ft_stack_is_sort(stack_a) == 1))
 	{
-		ft_free(&stack_a);
-		ft_free(&stack_b);
+		ft_free(&stack_a, &stack_b);
 		return (0);
 	}
 	stack_a = ft_init_index(stack_a);
@@ -112,7 +111,6 @@ int	main(int ac, char **av)
 		stack_a = sort_small_stack(stack_a, stack_b, count);
 	else
 		stack_a = ft_index_order(stack_a, stack_b);
-	ft_free(&stack_a);
-	ft_free(&stack_b);
+	ft_free(&stack_a, &stack_b);
 	return (0);
 }

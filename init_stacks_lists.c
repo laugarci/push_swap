@@ -66,17 +66,25 @@ void	ft_lstadd_front(t_list **lst, t_list *new)
 	}
 }
 
-void	ft_free(t_list **stack)
+void	ft_free(t_list **stack_a, t_list **stack_b)
 {
 	t_list	*aux;
 	t_list	*next;
 
-	aux = *stack;
+	aux = *stack_a;
 	while (aux != NULL)
 	{
 		next = aux->next;
 		free(aux);
 		aux = next;
 	}
-	*stack = NULL;
+	*stack_a = NULL;
+	aux = *stack_b;
+	while (aux != NULL)
+	{
+		next = aux->next;
+		free(aux);
+		aux = next;
+	}
+	*stack_b = NULL;
 }

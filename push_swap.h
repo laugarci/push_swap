@@ -43,7 +43,7 @@ int			ft_stack_is_sort(t_list *stack_a);
 int			find_max_num(t_list *stack_a);
 int			find_min_num(t_list *stack_a);
 int			ft_strlen(char *str);
-void		ft_free(t_list **stack);
+void		ft_free(t_list **stack_a, t_list **stack_b);
 
 //Index
 t_list		*ft_index(t_list *stack_a, int count);

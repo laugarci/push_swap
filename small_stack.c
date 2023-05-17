@@ -49,6 +49,21 @@ t_list	*sort_four(t_list *stack_a, t_list *stack_b)
 	return (stack_a);
 }
 
+t_list	*sort_three_aux(t_list *stack_a)
+{
+	make_ra(&stack_a);
+	make_sa(&stack_a);
+	return (stack_a);
+}
+
+t_list	*sort_three_aux_two(t_list *stack_a)
+{
+	make_sa(&stack_a);
+	make_ra(&stack_a);
+	make_sa(&stack_a);
+	return (stack_a);
+}
+
 t_list	*sort_three(t_list *stack_a)
 {
 	if (stack_a->val > stack_a->next->val)
@@ -56,10 +71,7 @@ t_list	*sort_three(t_list *stack_a)
 		if (stack_a->val > stack_a->next->next->val)
 		{
 			if (stack_a->next->val > stack_a->next->next->val)
-			{
-				make_ra(&stack_a);
-				make_sa(&stack_a);
-			}
+				stack_a = sort_three_aux(stack_a);
 			else if (stack_a->next->val < stack_a->next->next->val)
 				make_ra(&stack_a);
 		}
@@ -75,11 +87,7 @@ t_list	*sort_three(t_list *stack_a)
 			make_ra(&stack_a);
 		}
 		else
-		{
-			make_sa(&stack_a);
-			make_ra(&stack_a);
-			make_sa(&stack_a);
-		}
+			stack_a = sort_three_aux_two(stack_a);
 	}
 	return (stack_a);
 }
