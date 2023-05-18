@@ -6,7 +6,7 @@
 #    By: laugarci <laugarci@student.42barcel>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/10 12:17:45 by laugarci          #+#    #+#              #
-#    Updated: 2023/05/17 18:13:24 by laugarci         ###   ########.fr        #
+#    Updated: 2023/05/18 18:22:22 by laugarci         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,10 +14,10 @@ NAME	= push_swap
 
 HEADER	= push_swap.h
 INCLUDE = -I ./
-
+CC 		= gcc
+CFLAGS	= -Wall -Wextra -Werror
 NORM	= norminette -R CheckForbiddenSourceHeader
 RM		= rm -f
-AR		= $(CC) $(CFLAGS) -o $(NOMBRE) $(OBJS)
 
 SRC_FILES	=  ft_atol.c \
 		   ft_bits.c \
@@ -36,14 +36,13 @@ SRC_DEPS	= $(SRC_FILES:.c=.d)
 
 all: $(NAME)
 
-%.o : %.c Makefile
+%.o: %.c $(HEADER) Makefile
 	@$(CC) -MMD $(INCLUDE) -c $< -o $@
-	@echo "Compilimg $<..."
+	@echo "Compiling $<..."
 
-$(NAME) : $(SRC_OBJ)
-	@$(AR) $(NAME) $(SRC_OBJ)
-	@echo Library compiled!
-
+$(NAME): $(SRC_OBJ) $(HEADER)
+	@$(CC) $(CFLAGS) $(INCLUDE) $(SRC_OBJ) -o $(NAME)
+	@echo "Executable compiled!"
 
 clean:
 	@$(RM) $(SRC_OBJ) $(SRC_DEPS)
